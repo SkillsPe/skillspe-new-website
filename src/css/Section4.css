@@ -1,0 +1,144 @@
+.challenge-section {
+  /* border: 1px solid gray; */
+  padding: 50px 100px;
+  background-color: #f8f4ff;
+  text-align: start;
+  font-family: 'Sora', sans-serif;
+}
+
+.challenge-header h1 {
+  font-size: 38px;
+  color: #1b184f;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.highlight {
+  /* border: 1px solid red; */
+  width: auto;
+  font-size: 22px;
+  font-weight: 600;
+  color: #7e56da;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.highlighted {
+  color: #7e56da;
+  font-weight: 600;
+}
+
+.faded {
+  color: gray;
+}
+
+.css-19opgx6-MuiFormControlLabel-root {
+  /* border: 1px solid whitesmoke; */
+  border-radius: 25px !important;
+  margin-left: 0px !important;
+  margin-right: 6px !important;
+  background-color: #9a76f0;
+}
+
+.css-1p570h0-MuiSwitch-root
+  .MuiSwitch-switchBase.Mui-checked
+  + .MuiSwitch-track {
+  opacity: 1;
+  background-color: transparent !important;
+}
+
+.css-1p570h0-MuiSwitch-root .MuiSwitch-track {
+  opacity: 1;
+  background-color: transparent !important;
+  border-radius: 10px !important;
+}
+
+.css-tj8d99-MuiSwitch-track {
+  border-radius: 17px !important;
+  background-color: transparent !important;
+}
+.mode-switch-image img {
+  vertical-align: middle;
+}
+
+.subtext {
+  font-size: 16px;
+  color: #555;
+
+  display: flex;
+  justify-content: start;
+}
+
+.subtext > span {
+  font-size: 16px;
+  color: #686464;
+  width: 70%;
+  font-family: satoshi;
+  line-height: 1.5em;
+  font-size: larger;
+}
+
+.challenge-image {
+  width: 100%;
+  position: relative;
+  top: 350px;
+  z-index: 1;
+}
+
+/* For Mobile Device */
+@media (min-width: 320px) and (max-width: 500px) {
+  .challenge-section {
+    padding: 30px 20px;
+  }
+
+  .challenge-header h1 {
+    font-size: 27px;
+  }
+
+  .highlight {
+    font-size: 20px;
+  }
+
+  .subtext > span {
+    /* border: 1px solid red; */
+    width: 90%;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .challenge-image {
+    width: 100%;
+    position: relative;
+    top: 150px;
+    z-index: 1;
+  }
+}
+
+/* For Tablet Device */
+@media (min-width: 500px) and (max-width: 800px) {
+  .challenge-section {
+    padding: 40px 30px;
+  }
+  .challenge-image {
+    width: 100%;
+    position: relative;
+    top: 250px;
+    z-index: 1;
+  }  
+}
+
+/* For Tablet Device */
+@media (min-width: 801px) and (max-width: 1000px) {
+  .challenge-section {
+    padding: 50px 40px;
+  }
+  .challenge-image {
+    width: 100%;
+    position: relative;
+    top: 250px;
+    z-index: 1;
+  }  
+}

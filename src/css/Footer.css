@@ -1,0 +1,255 @@
+.footer {
+  width: 100%;
+  background-color: #0d0f3b;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px 80px;
+  font-family: 'Sora';
+  z-index: 2;
+}
+
+.footer-left {
+  gap: 10px;
+}
+
+.footer-logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo-title > p {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  margin-left: 10px;
+  font-family: 'sora';
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  /* border: 1px solid white; */
+  flex: 1 1 100px;
+  margin-bottom: 20px;
+  margin: 0px 10px 0px 10px;
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 25px 0;
+  cursor: pointer;
+  line-height: 1.8em;
+}
+
+footer-contact-item :nth-child(3) {
+  width: 280px;
+}
+
+.footer-center {
+  /* border: 1px solid white; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 0px 70px;
+  line-height: 30px;
+  letter-spacing: 0.3px;
+}
+
+.footer-center h4,
+.footer-right h4 {
+  margin-bottom: 14px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.footer-center a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin: 6px 0;
+  transition: color 0.3s ease;
+}
+
+.footer-center a:hover {
+  color: #fff;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-start;
+  padding: 60px 0px;
+}
+
+.social-icons {
+  display: flex;
+  position: relative;
+  bottom: 12px;
+}
+
+.social-icons a img {
+  width: 32px;
+  margin-right: 12px;
+}
+
+.footer-app-icons {
+  display: flex;
+}
+
+.footer-app-icon {
+  /* border: 1px solid white; */
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #8247df;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  gap: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+  .footer {
+    width: 100%;
+    padding: 0px 10px;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    background-color: #0d0f3b; /* dark navy or your exact site BG */
+    z-index: 2;
+  }
+
+  .footer-left {
+    padding: 20px 0px;
+    gap: 20px;
+  }
+
+  .footer-logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .footer-logo-title > p {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-left: 10px;
+    font-family: 'sora';
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    /* border: 1px solid white; */
+    flex: 1 1 100px;
+    margin-bottom: 20px;
+    margin: 0px 10px 0px 10px;
+  }
+
+  .footer-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-logo {
+    width: 30px;
+    margin-bottom: 10px;
+  }
+
+  .footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+    cursor: pointer;
+    line-height: 1.8em;
+  }
+
+  footer-contact-item :nth-child(3) {
+    width: 280px;
+  }
+
+  .footer-center {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 0px 70px 0px 10px;
+    line-height: 30px;
+    letter-spacing: 0.3px;
+  }
+
+  .footer-center h4,
+  .footer-right h4 {
+    margin-bottom: 14px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .footer-center a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin: 6px 0;
+    transition: color 0.3s ease;
+  }
+  .footer-center a:hover {
+    color: #fff;
+  }
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+    padding: 30px 0px;
+  }
+
+  .social-icons {
+    display: flex;
+    position: relative;
+    bottom: 12px;
+  }
+
+  .social-icons a img {
+    width: 32px;
+    margin-right: 12px;
+  }
+
+  .footer-app-icons {
+    display: flex;
+  }
+
+  .footer-app-icon {
+    /* border: 1px solid white; */
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #8247df;
+    border-radius: 15px;
+    gap: 10px;
+  }
+}

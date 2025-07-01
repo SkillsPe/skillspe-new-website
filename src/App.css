@@ -1,0 +1,11 @@
+body {
+  width: 100vw;
+  background-image: url('../src/assets/bg_hero_section.svg');
+  background-position: center top;
+  background-repeat: repeat;
+  background-size: contain 100%;  
+}
+
+
+
+

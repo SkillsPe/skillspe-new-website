@@ -1,0 +1,811 @@
+.section1-container {
+  width: 100vw;
+  background-image: url('/assets/bg_hero_section.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Container 1 */
+.parent-container {
+  /* border: 5px solid red; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.text-container {
+  /* border: 5px solid gray; */
+  width: 70vw;
+  margin: 0 auto;
+  position: relative;
+  top: 70px;
+  margin-bottom: 70px;
+}
+
+.text1 {
+  color: #ffd374;
+  font-family: 'sora';
+  font-weight: bolder;
+  font-size: 51px;
+  text-align: center;
+}
+
+.text2 {
+  color: #ffffff;
+  font-family: 'sora';
+  font-weight: normal;
+  font-size: 43px;
+  text-align: center;
+}
+
+.text3 {
+  color: #d1d1d1;
+  font-family: 'satoshi';
+  font-weight: lighter;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Container 2 */
+.image-container {
+  /* border: 1px solid red; */
+  display: grid;
+  width: 100%;
+  height: auto;
+  /* gap: 15px; */
+  grid-template-columns: 0.5fr 0.75fr 0.5fr;
+  padding: 0 20px;
+}
+
+.image3 {
+  /* border: 1px solid red; */
+  background-image: url('../assets/image3.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  height: 21rem;
+}
+
+.image1 {
+  /* border: 1px solid red; */
+  background-image: url('../assets/image1.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  /* width: 80%; */
+  height: 21rem;
+}
+
+.image2 {
+  /* border: 1px solid red; */
+  background-image: url('../assets/image2.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border-radius: 15px;
+}
+
+/* Container 3 */
+
+.download-container {
+  /* border: 1px solid white; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.download-section {
+  /* border: 1px solid gray; */
+  text-align: center;
+}
+
+.download-section > span {
+  color: #d5d2d2;
+  font-family: 'satoshi';
+  font-weight: 100;
+  font-size: 24px;
+}
+
+.download-button {
+  /* border: 1px solid slateblue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.download-button-item1,
+.download-button-item2 {
+  margin: 5px;
+  border: 1px solid white;
+  height: 54px;
+  width: 185px;
+  border-radius: 34px;
+  color: #ffffff;
+  font-family: 'satoshi';
+  font-weight: 100;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row; /* changed to row */
+  align-items: center; /* vertical centering */
+  padding: 0 15px;
+  gap: 10px; /* spacing between icon and text */
+}
+
+.download-icon {
+  font-size: 30px;
+  color: white;
+}
+
+.download-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+.bold-text {
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 'sora';
+}
+
+/* TODO: For other aspect ratios  */
+/* 📲 mobile devices */
+@media (min-width: 320px) and (max-width: 500px) {
+  body {
+    padding: 0 0px;
+    box-sizing: border-box;
+  }
+
+  .section1-container {
+    width: 100%;
+    background-image: url('/assets/mobile_bg_hero_section.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+  }
+
+  .parent-container {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Container 1 */
+  .text-container {
+    /* border: 2px solid gray; */
+    width: 90vw;
+  }
+
+  .text1 {
+    color: #ffd374;
+    font-family: 'sora';
+    font-weight: bolder;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .text2 {
+    /* border: 1px solid red; */
+    color: #ffffff;
+    font-family: 'sora';
+    font-weight: lighter;
+    font-size: 25px;
+    text-align: center;
+    position: relative;
+    top: 10px;
+  }
+
+  .text3 {
+    /* border: 1px solid red; */
+    color: #ffffff;
+    font-family: 'satoshi';
+    font-weight: lighter;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Container 2 */
+  .image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    gap: 12px;
+    padding: 0 12px;
+    width: 100%;
+  }
+
+  .image1 {
+    height: 277px;
+    /* width: 95%; */
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 35px;
+  }
+
+  .image2,
+  .image3 {
+    height: 150px;
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .image1 {
+    grid-column: span 2;
+    background-image: url('../assets/image2.svg');
+  }
+
+  .image2 {
+    background-image: url('../assets/image1.svg');
+  }
+
+  .image3 {
+    background-image: url('../assets/image3.svg'); /* Changed to image3 to avoid repetition */
+  }
+
+  /* Container 3 */
+  .download-container {
+    /* border: 1px solid gray; */
+    padding: 0px;
+    margin-top: -18px;
+    margin-bottom: 20px;
+  }
+
+  .download-icon {
+    font-size: 20px; /* smaller icon */
+  }
+
+  .download-text {
+    line-height: 1; /* slightly more readable on mobile */
+  }
+
+  .download-button {
+    margin-top: 10px;
+  }
+  .download-button-item1,
+  .download-button-item2 {
+    height: 36px;
+    padding: 0 10px;
+    width: 135px;
+  }
+
+  .download-text span {
+    font-size: 10px;
+  }
+
+  .bold-text {
+    font-size: 12px;
+  }
+
+  .download-section > span {
+    font-size: 12px;
+  }
+}
+
+/* For Tablet Device */
+@media (min-width: 500px) and (max-width: 800px) {
+  .section1-container {
+    width: 100vw;
+    background-image: url('/assets/bg_hero_section.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .text-parent-container {
+    border: 1px solid red;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .text-container {
+    /* border: 2px solid gray; */
+    height: 182px;
+    width: 90vw;
+    position: relative;
+    top: 90px;
+  }
+
+  .text1 {
+    color: #ffd374;
+    font-family: 'sora';
+    font-weight: bolder;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .text2 {
+    /* border: 1px solid red; */
+    color: #ffffff;
+    font-family: 'sora';
+    font-weight: normal;
+    font-size: 32px;
+    text-align: center;
+    position: relative;
+    bottom: -5px;
+  }
+
+  .text3 {
+    /* border: 1px solid red; */
+    color: #d1d1d1;
+    font-family: 'satoshi';
+    font-weight: lighter;
+    font-size: 19px;
+    font-weight: lighter;
+    letter-spacing: 0.5px;
+    position: relative;
+    bottom: -20px;
+  }
+
+  .image-container {
+    /* border: 1px solid gainsboro; */
+    padding: 0 12px;
+    width: 100%;
+  }
+
+  .image1 {
+    /* border: 1px solid greenyellow; */
+    height: 100%;
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+
+  .image2 {
+    /* border: 1px solid whitesmoke; */
+    height: 250px;
+    width: 350px;
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+  }
+
+  .image3 {
+    /* border: 1px solid greenyellow; */
+    height: auto;
+    border-radius: 12px;
+    background-position: bottom;
+    background-size: contain;
+  }
+
+  .download-container {
+    /* border: 1px solid red; */
+    margin-top: 0px;
+  }
+  .download-section > span {
+    font-size: 22px; /* Slightly reduced from 24px */
+  }
+
+  .download-button {
+    gap: 20px; /* Add spacing between the two buttons */
+    justify-content: center; /* Center them horizontally */
+    margin-top: 20px;
+  }
+
+  .download-button-item1,
+  .download-button-item2 {
+    width: 175px; /* Maintain good width */
+    height: 50px; /* Slightly reduced height */
+    padding: 0 12px;
+    gap: 10px; /* Keep space between icon and text */
+    border-radius: 28px;
+  }
+
+  .download-icon {
+    font-size: 26px; /* Balanced icon size */
+  }
+
+  .download-text {
+    line-height: 1.2;
+  }
+
+  .download-text span {
+    font-size: 13px; /* Normal line */
+  }
+
+  .bold-text {
+    font-size: 15px; /* Emphasized line */
+  }
+}
+
+/* For Laptop Device */
+@media (min-width: 800px) and (max-width: 1000px) {
+  .section1-container {
+    width: 100vw;
+    background-image: url('/assets/bg_hero_section.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .text-parent-container {
+    border: 1px solid red;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-container {
+    /* border: 2px solid gray; */
+    height: 182px;
+    width: 90vw;
+    position: relative;
+    top: 150px;
+  }
+
+  .text1 {
+    color: #ffd374;
+    font-family: 'sora';
+    font-weight: bolder;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .text2 {
+    /* border: 1px solid red; */
+    color: #ffffff;
+    font-family: 'sora';
+    font-weight: normal;
+    font-size: 32px;
+    text-align: center;
+    position: relative;
+    bottom: -5px;
+  }
+
+  .text3 {
+    /* border: 1px solid red; */
+    color: #d1d1d1;
+    font-family: 'satoshi';
+    font-weight: lighter;
+    font-size: 19px;
+    font-weight: lighter;
+    letter-spacing: 0.5px;
+    position: relative;
+    bottom: -20px;
+  }
+
+  .image-container {
+    /* border: 1px solid gainsboro; */
+    padding: 0 12px;
+    width: 100%;
+  }
+
+  .image1 {
+    /* border: 1px solid greenyellow; */
+    height: 100%;
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+
+  .image2 {
+    /* border: 1px solid whitesmoke; */
+    width: 500px;
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+  }
+
+  .image3 {
+    /* border: 1px solid greenyellow; */
+    height: auto;
+    border-radius: 12px;
+    background-position: bottom;
+    background-size: contain;
+  }
+
+  .download-container {
+    /* border: 1px solid red; */
+  }
+  .download-section > span {
+    font-size: 22px; /* Slightly reduced from 24px */
+  }
+
+  .download-button {
+    gap: 20px; /* Add spacing between the two buttons */
+    justify-content: center; /* Center them horizontally */
+    margin-top: 20px;
+  }
+
+  .download-button-item1,
+  .download-button-item2 {
+    width: 175px; /* Maintain good width */
+    height: 50px; /* Slightly reduced height */
+    padding: 0 12px;
+    gap: 10px; /* Keep space between icon and text */
+    border-radius: 28px;
+  }
+
+  .download-icon {
+    font-size: 26px; /* Balanced icon size */
+  }
+
+  .download-text {
+    line-height: 1.2;
+  }
+
+  .download-text span {
+    font-size: 13px; /* Normal line */
+  }
+
+  .bold-text {
+    font-size: 15px; /* Emphasized line */
+  }
+}
+
+/* For Laptop Device */
+@media (min-width: 1000px) and (max-width: 1440px) {
+  .section1-container {
+    width: 100vw;
+    background-image: url('/assets/bg_hero_section.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .text-parent-container {
+    /* border: 1px solid red; */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .text-container {
+    /* border: 2px solid gray; */
+    width: 90vw;
+    position: relative;
+    top: 120px;
+  }
+
+  .text1 {
+    color: #ffd374;
+    font-family: 'sora';
+    font-weight: bolder;
+    font-size: 38px;
+    text-align: center;
+  }
+
+  .text2 {
+    /* border: 1px solid red; */
+    color: #ffffff;
+    font-family: 'sora';
+    font-weight: normal;
+    font-size: 35px;
+    text-align: center;
+    position: relative;
+    bottom: -5px;
+  }
+
+  .text3 {
+    /* border: 1px solid red; */
+    color: #d1d1d1;
+    font-family: 'satoshi';
+    font-weight: lighter;
+    font-size: 19px;
+    font-weight: lighter;
+    letter-spacing: 0.5px;
+    position: relative;
+    bottom: -10px;
+  }
+
+  .image-container {
+    /* border: 1px solid gainsboro; */
+    padding: 0 12px;
+    width: 100%;
+    position: relative;
+    top: 100px;
+  }
+
+  .image1 {
+    /* border: 1px solid greenyellow; */
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+
+  .image2 {
+    /* border: 1px solid whitesmoke; */
+    width: 500px;
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+  }
+
+  .image3 {
+    /* border: 1px solid greenyellow; */
+    height: auto;
+    border-radius: 12px;
+    background-position: bottom;
+    background-size: contain;
+  }
+
+  .download-section > span {
+    font-size: 22px; /* Slightly reduced from 24px */
+  }
+
+  .download-button {
+    gap: 20px; /* Add spacing between the two buttons */
+    justify-content: center; /* Center them horizontally */
+    margin-top: 20px;
+  }
+
+  .download-button-item1,
+  .download-button-item2 {
+    width: 175px; /* Maintain good width */
+    height: 50px; /* Slightly reduced height */
+    padding: 0 12px;
+    gap: 10px; /* Keep space between icon and text */
+    border-radius: 28px;
+  }
+
+  .download-icon {
+    font-size: 26px; /* Balanced icon size */
+  }
+
+  .download-text {
+    line-height: 1.2;
+  }
+
+  .download-text span {
+    font-size: 13px; /* Normal line */
+  }
+
+  .bold-text {
+    font-size: 15px; /* Emphasized line */
+  }
+}
+
+/* For Larger Desktop Devices */
+@media (min-width: 1440px) and (max-width: 1920px) {
+  .section1-container {
+    width: 100vw;
+    background-image: url('/assets/bg_hero_section.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height: auto;
+  }
+
+  .text-parent-container {
+    /* border: 1px solid red; */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .text-container {
+    /* border: 2px solid gray; */
+    width: 90vw;
+    position: relative;
+    top: 120px;
+  }
+
+  .text1 {
+    color: #ffd374;
+    font-family: 'sora';
+    font-weight: bolder;
+    font-size: 38px;
+    text-align: center;
+  }
+
+  .text2 {
+    /* border: 1px solid red; */
+    color: #ffffff;
+    font-family: 'sora';
+    font-weight: normal;
+    font-size: 35px;
+    text-align: center;
+    position: relative;
+    bottom: -5px;
+  }
+
+  .text3 {
+    /* border: 1px solid red; */
+    color: #d1d1d1;
+    font-family: 'satoshi';
+    font-weight: lighter;
+    font-size: 19px;
+    font-weight: lighter;
+    letter-spacing: 0.5px;
+    position: relative;
+    bottom: -10px;
+  }
+
+  .image-container {
+    /* border: 1px solid gainsboro; */
+    padding: 0 12px;
+    width: 100%;
+    position: relative;
+    top: 100px;
+  }
+
+  .image1 {
+    /* border: 1px solid greenyellow; */
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+
+  .image2 {
+    /* border: 1px solid whitesmoke; */
+    height: 400px;
+    width: 700px;
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+
+  .image3 {
+    /* border: 1px solid greenyellow; */
+    height: auto;
+    border-radius: 12px;
+    background-position: bottom;
+    background-size: contain;
+  }
+
+  .download-section > span {
+    font-size: 22px; /* Slightly reduced from 24px */
+  }
+
+  .download-button {
+    gap: 20px; /* Add spacing between the two buttons */
+    justify-content: center; /* Center them horizontally */
+    margin-top: 20px;
+  }
+
+  .download-button-item1,
+  .download-button-item2 {
+    width: 175px; /* Maintain good width */
+    height: 50px; /* Slightly reduced height */
+    padding: 0 12px;
+    gap: 10px; /* Keep space between icon and text */
+    border-radius: 28px;
+  }
+
+  .download-icon {
+    font-size: 26px; /* Balanced icon size */
+  }
+
+  .download-text {
+    line-height: 1.2;
+  }
+
+  .download-text span {
+    font-size: 13px; /* Normal line */
+  }
+
+  .bold-text {
+    font-size: 15px; /* Emphasized line */
+  }
+}

@@ -1,0 +1,162 @@
+/* Prevent horizontal scroll */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Header Container */
+.header {
+  position: relative;
+  top: 1.5rem;
+  width: 90%;
+  height: 4.375rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(3px);
+  border-radius: 0.9375rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 0 1rem;
+  margin: auto;
+  z-index: 1000;
+  overflow-x: hidden;
+}
+
+/* Logo Area */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-text {
+  color: #1b174f;
+  font-weight: bold;
+  font-size: 1rem;
+  font-family: 'Sora';
+}
+
+/* Header Wrapper Padding */
+.header-wrapper {
+  padding: 0 1rem;
+  overflow-x: hidden;
+}
+
+/* Desktop Only Navigation */
+.desktop-nav {
+  display: none;
+}
+
+/* Mobile Menu Icon Default Hidden */
+.mobile-menu-icon {
+  display: block;
+  cursor: pointer;
+}
+
+/* Navigation Links */
+.desktop-nav a,
+.mobile-menu a {
+  color: #1b184f;
+  font-size: 1rem;
+  text-decoration: none;
+  /* border: 1px solid red;  */
+  z-index: 9999;
+}
+
+.desktop-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Dropdown Menu */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  background-color: white;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 999;
+}
+
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+
+/* Mobile Screens (320px to 500px) */
+@media (min-width: 320px) and (max-width: 500px) {
+  .header {
+    padding: 0 0.75rem;
+  }
+
+  .logo-text {
+    font-size: 0.95rem;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .header-wrapper {
+    padding: 0 0.75rem;
+  }
+}
+
+/* Tablet and Up (≥768px) */
+@media (min-width: 768px) {
+  .header-wrapper {
+    padding: 0 3rem;
+  }
+
+  .logo-text {
+    font-size: 1.25rem;
+  }
+
+  .desktop-nav {
+    display: flex;
+    gap: 3rem;
+    color: #1b184f;
+    font-size: 1.1rem;
+    font-family: 'Sora';
+  }
+
+  .mobile-menu-icon {
+    display: none;
+  }
+}
+
+/* Medium Screens (1000px to 1280px) */
+@media (min-width: 1000px) and (max-width: 1280px) {
+  .header-wrapper {
+    padding: 0 4rem;
+  }
+
+  .desktop-nav {
+    gap: 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Large Screens (≥1440px) */
+@media (min-width: 1440px) {
+  .header-wrapper {
+    padding: 0 6rem;
+  }
+
+  .desktop-nav {
+    gap: 4rem;
+    font-size: 1.2rem;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+  }
+}

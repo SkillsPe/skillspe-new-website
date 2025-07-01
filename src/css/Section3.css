@@ -1,0 +1,68 @@
+.private-challenges-section {
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 80px 20px; */
+  text-align: center;
+  background-color: white;
+  margin: 0 auto;
+  font-family: 'Satoshi', 'Sora', sans-serif;
+}
+
+/* Base styles for all screen sizes */
+.intro-text {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.title-text {
+  font-size: 36px;
+  font-weight: 700;
+  color: #7e56da;
+  margin-bottom: 20px;
+}
+
+.desc-text {
+  font-size: 16px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Tablet screens: 500px to 1000px */
+@media (min-width: 500px) and (max-width: 1000px) {
+  .intro-text {
+    font-size: 16px;
+  }
+
+  .title-text {
+    font-size: 30px;
+  }
+
+  .desc-text {
+    font-size: 15px;
+  }
+}
+
+/* Mobile screens: 320px to 500px */
+@media (min-width: 320px) and (max-width: 500px) {
+  .private-challenges-section {
+    padding: 60px 16px;
+  }
+
+  .intro-text {
+    font-size: 15px;
+  }
+
+  .title-text {
+    font-size: 26px;
+  }
+
+  .desc-text {
+    font-size: 14px;
+  }
+}
