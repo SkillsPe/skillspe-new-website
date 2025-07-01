@@ -47,8 +47,6 @@ const Card3 = () => {
   );
 };
 
-
-
 const sampleCards = [
   <div>Step 1: Register</div>,
   <Card2 />,
