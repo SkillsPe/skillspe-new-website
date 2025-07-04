@@ -5,9 +5,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 60px 80px;
+  padding: 40px 60px;
   font-family: 'Sora';
   z-index: 2;
+}
+
+span {
+  font-family: 'satoshi';
 }
 
 .footer-left {
@@ -24,6 +28,7 @@
   font-weight: bolder;
   margin-left: 10px;
   font-family: 'sora';
+  font-style: italic;
 }
 
 .footer-left,
@@ -58,6 +63,15 @@
 
 footer-contact-item :nth-child(3) {
   width: 280px;
+}
+
+.footer-contact-item > span {
+  font-family: 'satoshi';
+}
+
+.location > span {
+  font-family: 'satoshi';
+  width: 296px;
 }
 
 .footer-center {
@@ -95,7 +109,7 @@ footer-contact-item :nth-child(3) {
   flex-direction: column;
   justify-content: end;
   align-items: flex-start;
-  padding: 60px 0px;
+  padding: 30px 0px;
 }
 
 .social-icons {
@@ -110,29 +124,309 @@ footer-contact-item :nth-child(3) {
 }
 
 .footer-app-icons {
-  display: flex;
-}
-
-.footer-app-icon {
   /* border: 1px solid white; */
-  cursor: pointer;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: #8247df;
-  margin: 10px;
-  padding: 10px 20px;
-  border-radius: 15px;
-  gap: 10px;
 }
 
 @media (min-width: 320px) and (max-width: 500px) {
   .footer {
     width: 100%;
-    padding: 0px 10px;
+    padding: 30px 10px;
     overflow: hidden;
-    border-radius: 20px 20px 0 0;
+
+    background-color: #0d0f3b;
+    z-index: 2;
+  }
+
+  .footer-left {
+    padding: 20px 0px;
+    gap: 20px;
+  }
+
+  .footer-logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .footer-logo-title > p {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-left: 10px;
+    font-family: 'sora';
+  }
+
+  .footer-copyright {
+    font-size: 10px;
+  }
+
+  .footer-contact-item > span {
+    font-family: 'satoshi';
+    font-size: 12px;
+    line-height: 1.4rem;
+  }
+
+  .location > span {
+    width: 258px;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    /* border: 1px solid white; */
+    flex: 1 1 100px;
+    margin-bottom: 20px;
+    margin: 0px 10px 0px 10px;
+  }
+
+  .footer-logo {
+    width: 30px;
+    margin-bottom: 10px;
+  }
+
+  .footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+    cursor: pointer;
+    line-height: 1.8em;
+  }
+
+  footer-contact-item :nth-child(3) {
+    width: 280px;
+  }
+
+  .footer-center {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 0px 70px 0px 10px;
+  }
+
+  .footer-center h4,
+  .footer-right h4 {
+    margin-bottom: 14px;
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .footer-center a {
+    color: #ccc;
+    font-family: 'satoshi';
+    font-size: 14px;
+  }
+
+  .footer-center-social-container {
+    margin-top: 30px;
+  }
+
+  .footer-center-social-container > h3 {
+    font-size: 14px;
+  }
+
+  .social-icons > a {
+    margin-top: 20px;
+  }
+
+  .footer-center > h3 {
+    font-size: 14px;
+  }
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+    padding: 30px 0px;
+    margin-left: 20px;
+  }
+
+  .social-icons {
+    display: flex;
+    position: relative;
+    bottom: 12px;
+  }
+
+  .social-icons a img {
+    width: 25px;
+    margin-right: 12px;
+  }
+
+  .footer-app-icons {
+    /* display: flex; */
+
+    width: 250px;
+  }
+
+  .location > span {
+    font-family: 'satoshi';
+    width: 196px;
+  }
+
+  .footer-app-icon {
+    /* border: 1px solid white; */
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    width: 370px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #8247df;
+    margin-right: 20px;
+    border-radius: 8px;
+    font-family: 'sora';
+    font-weight: bold;
+    font-size: 11px;
+  }
+
+  .footer-app-icon img {
+    height: 23px;
+    width: 23px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 800px) {
+  .footer {
+    width: 100%;
+    padding: 50px 20px;
+    overflow: hidden;
+    background-color: #0d0f3b;
+    z-index: 2;
+  }
+
+  .location > span {
+    font-family: 'satoshi';
+    width: 275px;
+  }
+
+  .footer-left {
+    padding: 20px 0px;
+    gap: 20px;
+  }
+
+  .footer-logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .footer-logo-title > p {
+    font-size: 1.8rem;
+    font-weight: bolder;
+    margin-left: 10px;
+    font-family: 'sora';
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    flex: 1 1 100px;
+    margin-bottom: 20px;
+    margin: 0px 10px 0px 10px;
+  }
+
+  .footer-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+  }
+
+  .footer-logo {
+    width: 30px;
+    margin-bottom: 10px;
+  }
+
+  .footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+    cursor: pointer;
+    line-height: 1.8em;
+  }
+
+  footer-contact-item :nth-child(3) {
+    width: 280px;
+  }
+
+  .footer-center {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 0px 10px 0px 10px;
+  }
+
+  .footer-center h3 {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  .footer-center a {
+    color: #ccc;
+    font-family: 'satoshi';
+  }
+
+  .footer-center a:hover {
+    color: #fff;
+  }
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+    padding: 70px 0px;
+  }
+
+  .social-icons {
+    display: flex;
+    position: relative;
+    bottom: 12px;
+  }
+
+  .social-icons a img {
+    width: 32px;
+    margin-right: 12px;
+  }
+
+  .footer-app-icons {
+    /* display: flex; */
+    width: 230px;
+  }
+
+  .footer-app-icon {
+    border: 1px solid #ff34c1;
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    width: 370px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #8247df;
+    margin-right: 20px;
+    border-radius: 8px;
+    font-family: 'sora';
+    font-weight: bold;
+    font-size: 11px;
+  }
+
+  .footer-app-icon img {
+    height: 23px;
+    width: 23px;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1024px) {
+  .footer {
+    width: 100%;
+    padding: 20px 40px;
+    overflow: hidden;
     background-color: #0d0f3b; /* dark navy or your exact site BG */
     z-index: 2;
   }
@@ -164,13 +458,6 @@ footer-contact-item :nth-child(3) {
     margin: 0px 10px 0px 10px;
   }
 
-  .footer-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
   .footer-logo {
     width: 30px;
     margin-bottom: 10px;
@@ -195,9 +482,15 @@ footer-contact-item :nth-child(3) {
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    padding: 0px 70px 0px 10px;
-    line-height: 30px;
-    letter-spacing: 0.3px;
+    padding: 0px 10px 0px 10px;
+  }
+
+  .footer-center-social-container {
+
+  } 
+
+  .footer-center-social-container > h3 {
+    font-size: 18px;
   }
 
   .footer-center h4,
@@ -213,9 +506,7 @@ footer-contact-item :nth-child(3) {
     text-decoration: none;
     margin: 6px 0;
     transition: color 0.3s ease;
-  }
-  .footer-center a:hover {
-    color: #fff;
+    font-family: satoshi;
   }
 
   .footer-right {
@@ -223,7 +514,172 @@ footer-contact-item :nth-child(3) {
     flex-direction: column;
     justify-content: end;
     align-items: flex-start;
-    padding: 30px 0px;
+    padding: 90px 0px;
+  }
+
+  .social-icons {
+    display: flex;
+    margin-top: 15px; 
+  }
+
+  .social-icons a img {
+    width: 32px;
+    margin-right: 12px;
+  }
+
+  .footer-right-heading {
+    font-family: 'sora';
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .footer-app-icons {
+    /* display: flex; */
+
+    width: 350px;
+  }
+
+  .footer-app-icon {
+    /* border:1px solid white; */
+    cursor: pointer;
+    display: flex;
+    height: 50px;
+    width: 150px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #8247df;
+    margin-right: 20px;
+    border-radius: 10px;
+    padding: 2px;
+    font-family: 'sora';
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .footer-app-icon img {
+    height: 33px;
+    width: 33px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .footer {
+    width: 100%;
+    background-color: #0d0f3b;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 60px;
+    font-family: 'Sora';
+    z-index: 2;
+  }
+
+  span {
+    font-family: 'satoshi';
+  }
+
+  .footer-left {
+    gap: 10px;
+  }
+
+  .footer-logo-title {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-logo-title > p {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    margin-left: 10px;
+    font-family: 'sora';
+    font-style: italic;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    /* border: 1px solid white; */
+    flex: 1 1 100px;
+    margin-bottom: 20px;
+    margin: 0px 10px 0px 10px;
+  }
+
+  .footer-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+  }
+
+  .footer-logo {
+    width: 40px;
+    margin-bottom: 10px;
+  }
+
+  .footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+    cursor: pointer;
+    line-height: 1.8em;
+  }
+
+  footer-contact-item :nth-child(3) {
+    width: 280px;
+  }
+
+  .footer-contact-item > span {
+    font-family: 'satoshi';
+  }
+
+  .location > span {
+    font-family: 'satoshi';
+    width: 296px;
+  }
+
+  .footer-center {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 0px 70px;
+    line-height: 30px;
+    letter-spacing: 0.3px;
+  }
+
+  .footer-center h4,
+  .footer-right h4 {
+    margin-bottom: 14px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .footer-center > a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin: 6px 0;
+    font-family: 'satoshi';
+  }
+
+  .footer-center-social-container {
+    margin-top: 30px;
+  }
+
+  .footer-center-social-container > h3 {
+    font-size: 14px;
+  }
+
+  .footer-right {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+    padding: 60px 0px;
   }
 
   .social-icons {
@@ -241,15 +697,272 @@ footer-contact-item :nth-child(3) {
     display: flex;
   }
 
+  .footer-right-heading {
+    font-family: 'sora';
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .footer-app-icons {
+    /* display: flex; */
+    height: 100px;
+    width: 450px;
+  }
+
   .footer-app-icon {
-    /* border: 1px solid white; */
+    /* border:1px solid white; */
     cursor: pointer;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    height: 60px;
+    width: 270px;
+    justify-content: space-evenly;
     align-items: center;
     background-color: #8247df;
+    margin-right: 20px;
+    border-radius: 10px;
+    padding: 2px;
+    font-family: 'sora';
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .footer-app-icon img {
+    height: 33px;
+    width: 33px;
+  }
+
+  .footer-right-heading {
+    font-family: 'sora';
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .footer-app-icons {
+    /* display: flex; */
+    height: 100px;
+    width: 450px;
+  }
+
+  .footer-app-icon {
+    /* border:1px solid white; */
+    cursor: pointer;
+    display: flex;
+    height: 60px;
+    width: 270px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #8247df;
+    margin-right: 20px;
+    border-radius: 10px;
+    padding: 2px;
+    font-family: 'sora';
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .footer-app-icon img {
+    height: 33px;
+    width: 33px;
+  }
+
+  .footer-right-heading {
+    font-family: 'sora';
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .footer-app-icons {
+    /* display: flex; */
+    height: 100px;
+    width: 450px;
+  }
+
+  .footer-app-icon {
+    /* border:1px solid white; */
+    cursor: pointer;
+    display: flex;
+    height: 60px;
+    width: 270px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #8247df;
+    margin-right: 20px;
     border-radius: 15px;
+    padding: 2px;
+    font-family: 'sora';
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .footer-app-icon img {
+    height: 33px;
+    width: 33px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer {
+    width: 100%;
+    background-color: #0d0f3b;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 60px;
+    font-family: 'Sora';
+    z-index: 2;
+  }
+
+  .footer-left {
     gap: 10px;
+  }
+
+  .footer-logo-title {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-logo-title > p {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    margin-left: 10px;
+    font-family: 'satoshi';
+    font-style: italic;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    /* border: 1px solid white; */
+    flex: 1 1 100px;
+    margin-bottom: 20px;
+    margin: 0px 10px 0px 10px;
+  }
+
+  .footer-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-center > a {
+    font-family: 'satoshi';
+  }
+
+  .footer-logo {
+    width: 40px;
+    margin-bottom: 10px;
+  }
+
+  .footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+    cursor: pointer;
+    line-height: 1.8em;
+  }
+
+  footer-contact-item :nth-child(3) {
+    width: 280px;
+  }
+
+  .footer-contact-item > span {
+    font-family: 'satoshi';
+  }
+
+  .location > span {
+    font-family: 'satoshi';
+    width: 296px;
+  }
+
+  .footer-center-social-container {
+
+  }
+
+
+
+  .footer-center {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    padding: 0px 70px;
+    line-height: 30px;
+    letter-spacing: 0.3px;
+  }
+
+  .footer-center h3,
+  .footer-right h4 {
+    margin-bottom: 14px;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .footer-center a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin: 6px 0;
+    transition: color 0.3s ease;
+  }
+
+  .footer-center a:hover {
+    color: #fff;
+  }
+
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+    padding: 60px 0px;
+  }
+
+  .social-icons {
+    display: flex;
+    position: relative;
+    bottom: 12px;
+  }
+
+  .social-icons a img {
+    width: 32px;
+    margin-right: 12px;
+  }
+
+  .footer-right-heading {
+    font-family: 'sora';
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .footer-app-icons {
+    /* display: flex; */
+    height: 100px;
+    width: 450px;
+  }
+
+  .footer-app-icon {
+    border: 1px solid #ff34c1;
+    cursor: pointer;
+    display: flex;
+    height: 60px;
+    width: 175px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #8247df;
+    margin-right: 20px;
+    border-radius: 15px;
+    padding: 2px;
+    font-family: 'sora';
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .footer-app-icon img {
+    height: 33px;
+    width: 33px;
   }
 }
