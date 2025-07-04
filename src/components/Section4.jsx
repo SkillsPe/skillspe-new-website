@@ -20,8 +20,7 @@ import SoloImage3 from '../assets/solo-carousel-image3.svg';
 import SoloImage4 from '../assets/solo-carousel-image4.svg';
 import SoloIcon from '../assets/solo-icon-image.svg';
 import DuoIcon from '../assets/duo-icon-image.svg';
-import ClickHereArrow from '../assets/ClickHere_arrow.svg';
-import ChallengeCarousel from '../assets/Section4_image2.svg';
+import ChallengeCarousel from '../assets/Section4_Image2.svg';
 
 // Importing css files
 import '../css/Section4.css';
@@ -148,7 +147,7 @@ export default function Section4() {
             alt='Click Here Arrow'
           /> */}
         </h1>
-        <p className='highlight'>
+        <div className='highlight'>
           Prove your Skills either way, Play
           <span className={isDuo ? 'faded' : 'highlighted'}>SOLO</span>
           <span className='mode-switch-image'>
@@ -166,7 +165,7 @@ export default function Section4() {
             </FormGroup>
           </span>
           <span className={isDuo ? 'highlighted' : 'faded'}>DUO</span>
-        </p>
+        </div>
         <p className='subtext'>
           <span>
             Create personal skill-based challenges, invite others, and get
