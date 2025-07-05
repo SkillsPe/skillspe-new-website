@@ -1,68 +1,110 @@
 .private-challenges-section {
-  min-height: 560px;
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* padding: 80px 20px; */
   text-align: center;
-  background-color: white;
+  background-color: #f7f3ff;
   margin: 0 auto;
   font-family: 'Satoshi', 'Sora', sans-serif;
 }
 
-/* Base styles for all screen sizes */
-.intro-text {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 12px;
-}
-
-.title-text {
-  font-size: 36px;
-  font-weight: 700;
-  color: #7e56da;
-  margin-bottom: 20px;
-}
-
-.desc-text {
-  font-size: 16px;
-  color: #666;
-  max-width: 700px;
+.video-container {
+  /* border: 1px solid black; */
+  background-color: white;
+  border-radius: 16px;
+  position: relative;
+  width: 1040px;
+  max-width: 100%;
+  height: 585px;
+  overflow: hidden;
   margin: 0 auto;
-  line-height: 1.6;
 }
 
-/* Tablet screens: 500px to 1000px */
-@media (min-width: 500px) and (max-width: 1000px) {
-  .intro-text {
-    font-size: 16px;
-  }
-
-  .title-text {
-    font-size: 30px;
-  }
-
-  .desc-text {
-    font-size: 15px;
-  }
+.video-container video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-/* Mobile screens: 320px to 500px */
-@media (min-width: 320px) and (max-width: 500px) {
+@media (min-width: 320px) and (max-width: 425px) {
   .private-challenges-section {
-    padding: 60px 16px;
+    padding: 10px 20px;
   }
 
-  .intro-text {
-    font-size: 15px;
+  .video-container {
+    background-color: #f7f3ff;
+    border-radius: 16px;
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    margin: 0 auto;
   }
 
-  .title-text {
-    font-size: 26px;
-  }
-
-  .desc-text {
-    font-size: 14px;
+  .video-container video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .private-challenges-section {
+    padding: 60px 40px;
+  }
+
+  .video-container {
+    /* border: 1px solid black; */
+    background-color: white;
+    border-radius: 16px;
+    position: relative;
+    height: 432px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .video-container video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .private-challenges-section {
+    padding: 50px 100px;
+  }
+
+  .video-container {
+    border: 1px solid black;
+    background-color: #f7f3ff;
+    border-radius: 16px;
+    position: relative;
+    height: 432px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .video-container video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+
+

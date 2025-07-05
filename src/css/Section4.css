@@ -15,15 +15,16 @@
 
 .highlight {
   /* border: 1px solid red; */
-  width: auto;
+  /* width: 55%; */
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 800;
   color: #7e56da;
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+  letter-spacing: 1.5px;
 }
 
 .highlighted {
@@ -73,12 +74,7 @@
 }
 
 .subtext > span {
-  font-size: 16px;
   color: #686464;
-  width: 70%;
-  font-family: satoshi;
-  line-height: 1.5em;
-  font-size: larger;
 }
 
 .challenge-image {
@@ -89,24 +85,39 @@
 }
 
 /* For Mobile Device */
-@media (min-width: 320px) and (max-width: 500px) {
+@media (min-width: 320px) and (max-width: 425px) {
   .challenge-section {
     padding: 30px 20px;
   }
 
   .challenge-header h1 {
-    font-size: 27px;
+    font-size: 20px;
   }
 
   .highlight {
-    font-size: 20px;
+    /* border: 1px solid red; */
+    width: 100%;
+    font-size: 0.8em;
+    font-weight: 500;
   }
 
   .subtext > span {
     /* border: 1px solid red; */
-    width: 90%;
-    font-size: 16px;
+    width: 281px;
+    font-size: 13px;
     margin-top: 20px;
+  }
+
+  .click-here-arrow {
+    /* border: 1px solid red; */
+
+    position: relative;
+    right: 0px;
+  }
+
+  .embla {
+    position: relative !important;
+    bottom: 50px !important;
   }
 
   .challenge-image {
@@ -118,7 +129,7 @@
 }
 
 /* For Tablet Device */
-@media (min-width: 500px) and (max-width: 800px) {
+@media (min-width: 426px) and (max-width: 768px) {
   .challenge-section {
     padding: 40px 30px;
   }
@@ -127,7 +138,21 @@
     position: relative;
     top: 250px;
     z-index: 1;
-  }  
+  }
+
+  .subtext > span {
+    /* border: 1px solid red; */
+    width: 80vw;
+    font-size: 1.5cw;
+    margin-top: 20px;
+  }
+
+  .click-here-arrow {
+    /* border: 1px solid red; */
+
+    position: relative;
+
+  }
 }
 
 /* For Tablet Device */
@@ -140,5 +165,5 @@
     position: relative;
     top: 250px;
     z-index: 1;
-  }  
+  }
 }

@@ -137,16 +137,6 @@ export default function Section4() {
           Kar Le Challenge,
           <br />
           Khud Se Ya Apne Dost Se!
-          {/* <img
-            style={{
-              position: 'relative',
-              top: '30px',
-              left: '20px',
-              width: '151px',
-            }}
-            src={ClickHereArrow}
-            alt='Click Here Arrow'
-          /> */}
         </h1>
         <p className='highlight'>
           Prove your Skills either way, Play
@@ -166,6 +156,11 @@ export default function Section4() {
             </FormGroup>
           </span>
           <span className={isDuo ? 'highlighted' : 'faded'}>DUO</span>
+          <img
+            className='click-here-arrow'
+            src={ClickHereArrow}
+            alt='Click Here Arrow'
+          />
         </p>
         <p className='subtext'>
           <span>
@@ -182,10 +177,8 @@ export default function Section4() {
         alt='Challenge Carousel'
       />
       <AutoCarousel slides={isDuo ? duoSlides : soloSlides} />
-      {/* <hr /> */}
-      {/* <CardCarousel /> */}
 
-      {/* <hr /> */}
+      {/* <CardCarousel /> */}
     </section>
   );
 }
