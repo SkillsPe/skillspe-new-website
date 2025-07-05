@@ -135,7 +135,7 @@ const AutoCarousel1 = ({ slides = [], delay = 4000 }) => {
       {slides.map((slide, i) => (
         <motion.div
           key={i}
-          className="absolute w-[100%] sm:w-[70%] rounded-2xl md:w-[74%] h-full  shadow-xl overflow-hidden"
+          className="absolute w-[100%] sm:w-[70%] rounded-2xl md:w-[74%]  h-full  shadow-xl overflow-hidden"
           variants={slideVariants}
           animate={getSlideState(i)}
           transition={{ type: "spring", stiffness: 150, damping: 20, duration: 0.5 }}
