@@ -130,12 +130,12 @@ const AutoCarousel1 = ({ slides = [], delay = 4000 }) => {
   };
 
   return (
-    <div className="w-full overflow-hidden pb-2 bg-transparent">
-    <div className="relative max-w-screen-lg mx-auto w-full h-[240px] sm:h-[280px] md:h-[320px] lg:h-[380px] flex items-center justify-center">
+    <div className="w-full overflow-hidden  bg-transparent">
+  <div className="relative max-w-screen-lg mx-auto w-full h-[140px] sm:h-[280px] md:h-[320px] lg:h-[380px] flex items-center justify-center">
       {slides.map((slide, i) => (
         <motion.div
           key={i}
-          className="absolute w-[100%] sm:w-[70%] md:w-[74%] h-full rounded-2xl shadow-xl overflow-hidden"
+          className="absolute w-[100%] sm:w-[70%] rounded-2xl md:w-[74%] h-full  shadow-xl overflow-hidden"
           variants={slideVariants}
           animate={getSlideState(i)}
           transition={{ type: "spring", stiffness: 150, damping: 20, duration: 0.5 }}
@@ -244,11 +244,11 @@ export default function Section4() {
       </div>
 
       <img
-        className='challenge-image'
+        className='challenge-image hidden sm:block'
         src={ChallengeCarousel}
         alt='Challenge Carousel'
       />
-<div className='-mx-[100px]'>
+<div className='-mx-[100px] p-8 sm:p-0'>
   <AutoCarousel1 slides={isDuo ? duoSlides : soloSlides} />
 </div>
 
