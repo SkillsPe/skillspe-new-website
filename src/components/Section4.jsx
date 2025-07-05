@@ -1,10 +1,10 @@
-import React, { useEffect, useCallback, useState } from 'react';
+import React, { useState } from 'react';
 
 import { styled } from '@mui/material/styles';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-import useEmblaCarousel from 'embla-carousel-react';
+// import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
 // importing components
@@ -82,49 +82,49 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 const duoSlides = [DuoImage1, DuoImage2, DuoImage3];
 const soloSlides = [SoloImage1, SoloImage2, SoloImage3, SoloImage4];
 
-const AutoCarousel = (props) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: 'center' },
-    [Autoplay({ delay: 4000 })]
-  );
-  const [selectedIndex, setSelectedIndex] = useState(0);
+// const AutoCarousel = (props) => {
+//   const [emblaRef, emblaApi] = useEmblaCarousel(
+//     { loop: true, align: 'center' },
+//     [Autoplay({ delay: 4000 })]
+//   );
+//   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const slides = props.slides || [];
+//   const slides = props.slides || [];
 
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
+//   const onSelect = useCallback(() => {
+//     if (!emblaApi) return;
+//     setSelectedIndex(emblaApi.selectedScrollSnap());
+//   }, [emblaApi]);
 
-  useEffect(() => {
-    if (!emblaApi) return;
-    emblaApi.on('select', onSelect);
-    onSelect();
-  }, [emblaApi, onSelect]);
+//   useEffect(() => {
+//     if (!emblaApi) return;
+//     emblaApi.on('select', onSelect);
+//     onSelect();
+//   }, [emblaApi, onSelect]);
 
-  return (
-    <div className='embla'>
-      <div className='embla__viewport' ref={emblaRef}>
-        <div className='embla__container'>
-          {slides.map((img, index) => (
-            <div
-              className={`embla__slide ${
-                selectedIndex === index ? 'is-active' : 'is-fade'
-              }`}
-              key={index}
-            >
-              <img
-                src={img}
-                alt={`slide-${index}`}
-                className='embla__slide__img'
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div className='embla'>
+//       <div className='embla__viewport' ref={emblaRef}>
+//         <div className='embla__container'>
+//           {slides.map((img, index) => (
+//             <div
+//               className={`embla__slide ${
+//                 selectedIndex === index ? 'is-active' : 'is-fade'
+//               }`}
+//               key={index}
+//             >
+//               <img
+//                 src={img}
+//                 alt={`slide-${index}`}
+//                 className='embla__slide__img'
+//               />
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 export default function Section4() {
   const [isDuo, setIsDuo] = useState(true);
@@ -171,12 +171,27 @@ export default function Section4() {
         </p>
       </div>
 
+      {/* Carousel Autoplay */}
+
+      <div className='carousel-container1'>
+        <div className='carousel'>
+          {(isDuo ? duoSlides : soloSlides).slice(0, 3).map((img, index) => (
+            <div
+              key={index}
+              className={`card ${index === 1 ? 'active' : 'faded'}`}
+            >
+              <img src={img} alt={`Challenge Carousel ${index}`} />
+            </div>
+          ))}
+        </div>
+      </div>
       <img
         className='challenge-image'
         src={ChallengeCarousel}
         alt='Challenge Carousel'
       />
-      <AutoCarousel slides={isDuo ? duoSlides : soloSlides} />
+
+      {/* <AutoCarousel slides={isDuo ? duoSlides : soloSlides} /> */}
 
       {/* <CardCarousel /> */}
     </section>
