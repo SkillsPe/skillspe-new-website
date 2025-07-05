@@ -1,5 +1,8 @@
+
+/* src/index.css (or main.css depending on your setup) */
+
 body {
-  width: 100vw;
+  width: 100%;
   background-image: url('../src/assets/bg_hero_section.svg');
   background-position: center top;
   background-repeat: repeat;
