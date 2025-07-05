@@ -19,6 +19,9 @@ import ProfileIcon2 from "../assets/animate_profile_icon2.svg";
 import ProfileIcon5 from "../assets/animate_profile_icon5.svg";
 import ProfileIcon6 from "../assets/animate_profile_icon6.svg";
 import ProfileIcon3 from "../assets/animate_profile_icon3.svg";
+import Rupee from "../assets/ruppee.svg";
+import Quantity from "../assets/quantity.svg";
+
 import ProfileIcon4 from "../assets/animate_profile_icon4.svg";
 import InviteMotivatorsImage from "../assets/invite-motivators-image.svg";
 import InviteModeratorImage from "../assets/invite-moderators-image.svg";
@@ -247,7 +250,7 @@ const Card3 = () => {
     if (moderatorInviteFill) {
       setTimeout(() => {
         setModeratorProfileFill(true);
-        setHideInviteMotivators(true); 
+        setHideInviteMotivators(true);
       }, 1500);
     }
   }, [moderatorInviteFill]);
@@ -296,7 +299,6 @@ const Card3 = () => {
       return () => clearTimeout(resetTimer);
     }
   }, [showModeratorSelected]);
-
 
   useEffect(() => {
     if (hideInviteMotivators) {
@@ -363,8 +365,8 @@ const Card3 = () => {
   }, [nextInvite]);
 
   return (
-<div className="card3   w-[280px] sm:w-[350px]">
-{/* Header */}
+    <div className="card3   w-[280px] sm:w-[350px]">
+      {/* Header */}
       <div className="flex items-center justify-between">
         <AnimatePresence>
           {!hideInviteMotivators ? (
@@ -690,6 +692,127 @@ const TypingText = ({ isNotActive }) => {
   );
 };
 
+const Card4 = () => {
+  const [quantity, setQuantity] = useState(5); // Static default value
+
+  return (
+    <div className="card3 w-[280px] sm:w-[350px]">
+      <div className="flex flex-col ">
+        <div className="flex gap-2 w-full">
+          <div className="flex gap-2 py-[4px] items-center w-1/2 bg-[#7E56DA] rounded-md justify-center">
+            <img src={ProfileIcon3} alt="profileIcon3" height={24} width={24} />
+            <p className="text-[16px] text-white">Jacob</p>
+          </div>
+          <div className="flex gap-2 py-[4px] items-center w-1/2 bg-white border border-[#FF34C1]/25 rounded-md justify-center">
+            <img src={ProfileIcon1} alt="profileIcon1" height={24} width={24} />
+            <p className="text-[16px] text-[#FF34C1]/80">Kevin</p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div className="bg-white p-4 rounded-xl w-full shadow">
+              {/* Header */}
+              <div className="flex justify-between items-center bg-[#f6f4fd] p-4 rounded-lg mb-6">
+                <div className="text-sm text-gray-600">
+                  You’re contributing
+                  <div className="text-xl text-black font-semibold">₹10</div>
+                </div>
+                <div className="border-l border-gray-300 h-10"></div>
+                <div className="text-sm text-purple-600 text-right">
+                  Win up to
+                  <div className="text-xl font-semibold">₹20</div>
+                </div>
+              </div>
+
+              {/* Quantity Slider */}
+              <div className="mb-2">
+                <label className="text-[#3F3F3F]  text-[12px] block mb-2">
+                  Price
+                </label>
+                <div className="flex items-center gap-3">
+                  <img src={Rupee} alt="rupee" height={24} width={24} />
+
+                  {/* Visually customized range input - not user-editable */}
+                  <div className="relative w-full">
+                    <input
+                      type="range"
+                      min="1"
+                      max="10"
+                      value={quantity}
+                      readOnly
+                      className="range-slider w-full h-[6px] rounded-full appearance-none bg-gray-200"
+                      style={{
+                        background: `linear-gradient(to right, #7E56DA 0%, #7E56DA ${
+                          (quantity - 1) * 11.11
+                        }%, #e5e7eb ${(quantity - 1) * 11.11}%, #e5e7eb 100%)`,
+                      }}
+                    />
+
+                    <div
+                      className="absolute top-[1px] z-10"
+                      style={{
+                        left: `calc(${(((quantity) - 1) / 9) * 100}% - 11px)`,
+                      }}
+                    >
+                      <div className="w-5 h-5 bg-[#FF34C1]/50 rounded-full border-2 border-white flex items-center justify-center text-white text-xs shadow-md">
+                        &lt;&gt;
+                      </div>
+                    </div>
+                  </div>
+
+                  <span className="text-[#7E56DA] text-sm font-semibold">
+                    {quantity}
+                  </span>
+                </div>
+              </div>
+              <div className="mb-2">
+                <label className="text-[#3F3F3F]  text-[12px] block mb-2">
+                  Quantity
+                </label>
+                <div className="flex items-center gap-3">
+                  <img src={Quantity} alt="quantity" height={24} width={24} />
+
+                  {/* Visually customized range input - not user-editable */}
+                  <div className="relative w-full">
+                    <input
+                      type="range"
+                      min="1"
+                      max="10"
+                      value={quantity}
+                      readOnly
+                      className="range-slider w-full h-[6px] rounded-full appearance-none bg-gray-200"
+                      style={{
+                        background: `linear-gradient(to right, #7E56DA 0%, #7E56DA ${
+                          (quantity - 1) * 11.11
+                        }%, #e5e7eb ${(quantity - 1) * 11.11}%, #e5e7eb 100%)`,
+                      }}
+                    />
+
+                    <div
+                      className="absolute top-[1px] z-10"
+                      style={{
+                        left: `calc(${(((quantity) - 1) / 9) * 100}% - 11px)`,
+                      }}
+                    >
+                      <div className="w-5 h-5 bg-[#FF34C1]/50 rounded-full border-2 border-white flex items-center justify-center text-white text-xs shadow-md">
+                        &lt;&gt;
+                      </div>
+                    </div>
+                  </div>
+
+                  <span className="text-[#7E56DA] text-sm font-semibold">
+                    {quantity}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const sampleCards = [
   <div className=" p-8 w-[280px] sm:w-[350px]">
     <div className="flex flex-col justify-between h-full  space-y-6 ">
@@ -716,23 +839,10 @@ const sampleCards = [
   <Card2 />,
   <Card3 />,
 
-  // <div className="min-w-full min-h-full">Step 4: Moderator Reviews</div>,
+  <Card4 />,
   // <div>Step 5: Winner Declared</div>,
   // <div>Step 6: Share your Badge</div>,
 ];
-
-// const ActiveCards = ({cards}) =>{
-//   const [startIndex,setStartIndex] = useState(0);
-//   const totalCards = cards.length;
-//   const handleNext = () => {
-//     setStartIndex((prev) => (prev + 1) % totalCards);
-//   };
-
-//   const handlePrev = () => {
-//     setStartIndex((prev) => (prev - 1 + totalCards) % totalCards);
-//   };
-
-// }
 
 const CardCarousel = ({ cards }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
