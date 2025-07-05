@@ -1,4 +1,5 @@
-import React, { useEffect, useCallback, useState } from 'react';
+import React, { useEffect,useRef, useCallback, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { styled } from '@mui/material/styles';
 import FormGroup from '@mui/material/FormGroup';
@@ -80,6 +81,78 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const duoSlides = [DuoImage1, DuoImage2, DuoImage3];
 const soloSlides = [SoloImage1, SoloImage2, SoloImage3, SoloImage4];
+const AutoCarousel1 = ({ slides = [], delay = 4000 }) => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % slides.length);
+    }, delay);
+    return () => clearInterval(interval);
+  }, [delay, slides.length]);
+
+  const getSlideState = (i) => {
+    if (i === index) return "center";
+    if (i === (index + 1) % slides.length) return "right";
+    if (i === (index - 1 + slides.length) % slides.length) return "left";
+    return "hidden";
+  };
+
+  const slideVariants = {
+    center: {
+      scale: 1,
+      x: 0,
+      opacity: 1,
+      // filter: "blur(0px)",
+      // zIndex: 3,
+    },
+    left: {
+      scale: 0.7,
+      x: "-100%",
+      opacity: 0.1,
+      filter: "blur(2px)",
+      // zIndex: 2,
+    },
+    right: {
+      scale: 0.7,
+      x: "100%",
+      opacity: 0.1,
+      filter: "blur(2px)",
+      // zIndex: 2,
+    },
+    hidden: {
+      scale: 0.7,
+      opacity: 0,
+      x: 0,
+      filter: "blur(400px)",
+      // zIndex: 1,
+    },
+  };
+
+  return (
+    <div className="w-full overflow-hidden pb-2 bg-transparent">
+    <div className="relative max-w-screen-lg mx-auto w-full h-[240px] sm:h-[280px] md:h-[320px] lg:h-[380px] flex items-center justify-center">
+      {slides.map((slide, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-[100%] sm:w-[70%] md:w-[74%] h-full rounded-2xl shadow-xl overflow-hidden"
+          variants={slideVariants}
+          animate={getSlideState(i)}
+          transition={{ type: "spring", stiffness: 150, damping: 20, duration: 0.5 }}
+        >
+          <img
+            src={slide}
+            alt={`Slide ${i}`}
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
+      ))}
+    </div>
+  </div>
+  
+  
+  );
+};
 
 const AutoCarousel = (props) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -136,16 +209,6 @@ export default function Section4() {
           Kar Le Challenge,
           <br />
           Khud Se Ya Apne Dost Se!
-          {/* <img
-            style={{
-              position: 'relative',
-              top: '30px',
-              left: '20px',
-              width: '151px',
-            }}
-            src={ClickHereArrow}
-            alt='Click Here Arrow'
-          /> */}
         </h1>
         <div className='highlight'>
           Prove your Skills either way, Play
@@ -165,6 +228,11 @@ export default function Section4() {
             </FormGroup>
           </span>
           <span className={isDuo ? 'highlighted' : 'faded'}>DUO</span>
+          {/* <img
+            className='click-here-arrow'
+            src={ClickHereArrow}
+            alt='Click Here Arrow'
+          /> */}
         </div>
         <p className='subtext'>
           <span>
@@ -180,11 +248,12 @@ export default function Section4() {
         src={ChallengeCarousel}
         alt='Challenge Carousel'
       />
-      <AutoCarousel slides={isDuo ? duoSlides : soloSlides} />
-      {/* <hr /> */}
-      {/* <CardCarousel /> */}
+<div className='-mx-[100px]'>
+  <AutoCarousel1 slides={isDuo ? duoSlides : soloSlides} />
+</div>
 
-      {/* <hr /> */}
+
+      {/* <CardCarousel /> */}
     </section>
   );
 }

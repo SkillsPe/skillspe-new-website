@@ -256,10 +256,11 @@
   }
 
   .features-header > h1 {
-    font-size: 20px;
+    /* border: 1px solid black; */
+    font-size: 27px;
     color: #1b184f;
     margin-bottom: 8px;
-    width: 263px;
+    width: 90%;
   }
 
   .feature-image-container {
@@ -410,13 +411,13 @@
   }
 
   .feature-description2 {
-    width: 70%;
-    margin-top: 10px;
+    width: 55%;
+    margin-top: 28px;
     text-align: left;
     line-height: 1.3;
     font-weight: normal;
     font-family: 'satoshi';
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 }
 
@@ -448,7 +449,7 @@
   }
 
   .features-header > h1 {
-    width: 529px;
+    width: 100%;
     font-size: 40px;
     color: #1b184f;
     margin-bottom: 8px;
@@ -635,7 +636,7 @@
 
   .feature-growthChart-icon {
     position: relative;
-    bottom:140px;
+    bottom: 140px;
     left: 55%;
     z-index: 1;
     width: 350px;
@@ -1198,7 +1199,6 @@
     bottom: 30px;
     left: 70%;
     z-index: 1;
-
   }
 
   .feature-description3 {

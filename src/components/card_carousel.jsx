@@ -26,7 +26,7 @@ import ProfileIcon4 from "../assets/animate_profile_icon4.svg";
 import InviteMotivatorsImage from "../assets/invite-motivators-image.svg";
 import InviteModeratorImage from "../assets/invite-moderators-image.svg";
 
-const Card2 = ({ onComplete }) => {
+const Card2 = ({ isActive = false }) => {
   const [fadeOut, setFadeOut] = useState(false);
   const [xOffset, setXOffset] = useState(0);
   const [filled, setFilled] = useState(false);
@@ -36,7 +36,7 @@ const Card2 = ({ onComplete }) => {
   const [yOffset, setYOffset] = useState(0);
   const [icon2AtCenter, setIcon2AtCenter] = useState(false);
   const [resetInvite, setResetInvite] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(true); // ✅ animation controller
+  const [isAnimating, setIsAnimating] = useState(false); 
   const containerRef = useRef(null);
   const inviteRef = useRef(null);
 
@@ -47,8 +47,17 @@ const Card2 = ({ onComplete }) => {
   };
 
   useEffect(() => {
+    if (isActive) {
+      setIsAnimating(true);
+    } else {
+      setIsAnimating(false);
+    }
+  }, [isActive]);
+
+  useEffect(() => {
     if (!isAnimating) return;
 
+    // Reset state for fresh animation
     setFadeOut(false);
     setFilled(false);
     setIconsVisible(false);
@@ -65,14 +74,11 @@ const Card2 = ({ onComplete }) => {
         const inviteRect = inviteRef.current.getBoundingClientRect();
         const containerCenter = containerRect.left + containerRect.width / 2;
         const inviteCenter = inviteRect.left + inviteRect.width / 2;
-
-        const distanceToCenter = containerCenter - inviteCenter;
         const containerCenterY = containerRect.top + containerRect.height / 2;
         const inviteCenterY = inviteRect.top + inviteRect.height / 2;
-        const distanceToCenterY = containerCenterY - inviteCenterY;
 
-        setXOffset(distanceToCenter);
-        setYOffset(distanceToCenterY);
+        setXOffset(containerCenter - inviteCenter);
+        setYOffset(containerCenterY - inviteCenterY);
       }
 
       setTimeout(() => setFilled(true), 1300);
@@ -98,12 +104,14 @@ const Card2 = ({ onComplete }) => {
       const resetTimeout = setTimeout(() => {
         setIsAnimating(false);
         setTimeout(() => {
-          setIsAnimating(true);
+          if (isActive) {
+            setIsAnimating(true); // 👈 only restart if still active
+          }
         }, 100);
       }, 2000);
       return () => clearTimeout(resetTimeout);
     }
-  }, [fadeOut, resetInvite]);
+  }, [fadeOut, resetInvite, isActive]);
 
   return (
     <div className="vs-card w-[280px] sm:w-[350px] bg-white rounded-lg flex items-center justify-center ">
@@ -226,7 +234,7 @@ const Card2 = ({ onComplete }) => {
   );
 };
 
-const Card3 = () => {
+const Card3 = ({ isActive = false }) => {
   const [moderatorInviteFill, setModeratorInviteFill] = useState(false);
   const [moderatorProfileFill, setModeratorProfileFill] = useState(false);
   const [showModeratorInfo, setShowModeratorInfo] = useState(false);
@@ -241,7 +249,12 @@ const Card3 = () => {
   const [nextInvite, setNextInvite] = useState(false);
 
   useEffect(() => {
+
     setTimeout(() => {
+      if (!isActive) {
+
+        return;
+      }
       setModeratorInviteFill(true);
     }, 100);
   }, [moderatorInviteFill]);
@@ -448,7 +461,7 @@ const Card3 = () => {
                   {!nextInvite ? (
                     <motion.img
                       key="icon1a"
-                      src={ProfileIcon1}
+                      src={ProfileIcon3}
                       height={40}
                       width={40}
                       initial={{ opacity: 0 }}
@@ -524,13 +537,13 @@ const Card3 = () => {
                     </AnimatePresence>
                     <motion.img
                       key="icon2b"
-                      src={ProfileIcon2}
+                      src={ProfileIcon6}
                       height={40}
                       width={40}
                     />
                     <motion.img
                       key="icon3b"
-                      src={ProfileIcon1}
+                      src={ProfileIcon5}
                       height={40}
                       width={40}
                     />
@@ -547,7 +560,7 @@ const Card3 = () => {
 
       {/* Moderator Bottom Section */}
       <div>
-        {moderatorInviteFill && !showModeratorInfo && (
+        { ((moderatorInviteFill && !showModeratorInfo) || !isActive)  && (
           <div className="flex items-center justify-between">
             <div className="text-[#7E56DA] text-[16px] font-medium">
               Invite
@@ -665,6 +678,21 @@ const TypingText = ({ isNotActive }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    // If card is not active, show first 3 words immediately
+    if (isNotActive) {
+      setDisplayedWords(words.slice(0, 3));
+      setIndex(3); // prevent animation
+      return;
+    }
+
+    // Reset state when switching from inactive to active
+    setDisplayedWords([]);
+    setIndex(0);
+  }, [isNotActive]);
+
+  useEffect(() => {
+    if (isNotActive) return; // Skip animation if inactive
+
     const interval = setInterval(() => {
       if (index < words.length) {
         setDisplayedWords((prev) => [...prev, words[index]]);
@@ -682,15 +710,16 @@ const TypingText = ({ isNotActive }) => {
     }
 
     return () => clearInterval(interval);
-  }, [index]);
+  }, [index, isNotActive]);
 
   return (
     <div className="text-[#7E56DA] text-[20px] font-medium leading-relaxed">
       {displayedWords.join(" ")}
-      <span className="animate-blink inline-block">|</span>
+      {!isNotActive && <span className="animate-blink inline-block">|</span>}
     </div>
   );
 };
+
 
 const Card4 = () => {
   const [quantity, setQuantity] = useState(5); // Static default value
@@ -751,7 +780,7 @@ const Card4 = () => {
                     <div
                       className="absolute top-[1px] z-10"
                       style={{
-                        left: `calc(${(((quantity) - 1) / 9) * 100}% - 11px)`,
+                        left: `calc(${((quantity - 1) / 9) * 100}% - 11px)`,
                       }}
                     >
                       <div className="w-5 h-5 bg-[#FF34C1]/50 rounded-full border-2 border-white flex items-center justify-center text-white text-xs shadow-md">
@@ -791,7 +820,7 @@ const Card4 = () => {
                     <div
                       className="absolute top-[1px] z-10"
                       style={{
-                        left: `calc(${(((quantity) - 1) / 9) * 100}% - 11px)`,
+                        left: `calc(${((quantity - 1) / 9) * 100}% - 11px)`,
                       }}
                     >
                       <div className="w-5 h-5 bg-[#FF34C1]/50 rounded-full border-2 border-white flex items-center justify-center text-white text-xs shadow-md">
@@ -813,8 +842,8 @@ const Card4 = () => {
   );
 };
 
-const sampleCards = [
-  <div className=" p-8 w-[280px] sm:w-[350px]">
+const sampleCards = (activeIndex) => [
+  <div className="p-8 w-[280px] sm:w-[350px]">
     <div className="flex flex-col justify-between h-full  space-y-6 ">
       <div className="flex w-max items-center justify-center rounded-[8px] p-[8px] border border-[#7E56DA]/20">
         🏃
@@ -824,7 +853,7 @@ const sampleCards = [
         Let’s create a new challenge!
       </div>
       <div className="flex flex-col space-y-2">
-        <TypingText />
+        <TypingText isNotActive={activeIndex !== 0} />
 
         <div className="bg-[#8A8A8A]/25 h-[2px] rounded-full"></div>
       </div>
@@ -836,17 +865,15 @@ const sampleCards = [
     </div>
   </div>,
 
-  <Card2 />,
-  <Card3 />,
-
-  <Card4 />,
-  // <div>Step 5: Winner Declared</div>,
-  // <div>Step 6: Share your Badge</div>,
+  <Card2 isActive={activeIndex === 1} />,
+  <Card3 isActive={activeIndex === 2} />,
+  // <Card4 isActive={activeIndex === 3} />,
 ];
 
-const CardCarousel = ({ cards }) => {
+const CardCarousel = ({ cardBuilder, stepContent }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
+  const cards = cardBuilder(currentIndex);
 
   const handleNext = () => {
     setDirection(1);
@@ -863,11 +890,18 @@ const CardCarousel = ({ cards }) => {
     ...cards.slice(0, currentIndex),
   ];
 
+  const { title, description,step } = stepContent[currentIndex]; // ✅ Dynamic content
+
   return (
-    <div className="carousel-container overflow-hidden w-full ">
-      <div className="carousel-container w-full">
+    <div className="carousel-container overflow-hidden w-full">
+<h1 className="text-[24px] font-semibold leading-tight pb-5">
+  <span className="text-white/50 text-[16px]">{step}</span>
+  <br />
+  <span className="text-white text-[20px]">{title}</span>
+</h1>
+
+      <div className="carousel w-full">
         <div className="grid grid-flow-col auto-cols-max gap-4 items-stretch max-w-[200px] md:max-w-[200px]">
-          {/* Active Card - Always First */}
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -878,13 +912,13 @@ const CardCarousel = ({ cards }) => {
               className="col-span-1 h-full"
             >
               <div className="bg-white rounded-lg h-full p-4">
-                {cards[currentIndex]}
+                {React.cloneElement(cards[currentIndex], { isActive: true })}
               </div>
             </motion.div>
           </AnimatePresence>
 
           {/* Remaining Cards */}
-          <AnimatePresence mode="wait" initial={false}>
+          <AnimatePresence initial={false}>
             {rotatedCards.slice(1).map((card, index) => (
               <motion.div
                 key={`${currentIndex}-${index}`}
@@ -919,14 +953,13 @@ const CardCarousel = ({ cards }) => {
         </div>
       </div>
 
-      <div className="nav-container">
-        <div className="nav-description">
-          <span>
-            Create a skill-based private challenge around something you’re great
-            at like running, gaming, or anything!
-          </span>
+      {/* ✅ Step Description */}
+      <div className="nav-container mt-4">
+        <div className="nav-description text-sm text-gray-600">
+          <span>{description}</span>
         </div>
-        <div className="nav-buttons-wrapper">
+
+        <div className="nav-buttons-wrapper mt-4 flex gap-2">
           <button onClick={handlePrev} className="nav-btn">
             <img src={LeftArrowBtn} alt="left arrow" />
           </button>
@@ -939,14 +972,37 @@ const CardCarousel = ({ cards }) => {
   );
 };
 
+const stepContent = [
+  {
+    step: "Step 1",
+    title: "Create a Duo Private Challenge",
+    description:
+      "Create a skill based private challenge around something you’re great at!",
+  },
+  {
+    step: "Step 2",
+    title: "Invite Challenger",
+    description:
+      "Invite your friends as motivators to give opinions, and a moderator to make the final call!",
+  },
+  {
+    step: "Step 3",
+    title: "Invite Motivator & Moderator!",
+    description:
+      "Let your friends as motivators place their opinion on whether you’ll succeed or not!",
+  },
+  // {
+  //   title: "Step 4\nDo the Thing!",
+  //   description:
+  //     "Now both of you take on the challenge. Give it your best shot!",
+  // },
+];
+
 export default function CardCarouselPreview() {
   return (
     <div className="card-carousel-container">
-      <h1>
-        Step 1 <br />
-        Create a Duo Private Challenge
-      </h1>
-      <CardCarousel cards={sampleCards} />
+      <CardCarousel cardBuilder={sampleCards} stepContent={stepContent} />
     </div>
   );
 }
+
