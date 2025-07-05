@@ -13,8 +13,9 @@ function App() {
     <>
       <div className='app-container'>
         <Header />
-        <Section1 />
-        <Section2 />
+        <div className="no-tailwind">
+  <Section1 />
+</div>        <Section2 />
         <Section3 />
         <Section4 />
         <Section5 />

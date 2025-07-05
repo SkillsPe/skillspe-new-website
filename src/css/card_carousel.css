@@ -1,4 +1,247 @@
 /* CardCarousel.css */
+/* Converted Tailwind styles to CSS */
+
+.card3 {
+  width: 280px;
+}
+
+@media (min-width: 640px) {
+  .card3 {
+    width: 350px;
+  }
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* TypingText.css */
+
+.typing-text {
+  color: #7E56DA;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+.invite-text {
+  color: #7E56DA;
+  font-size: 16px;
+  font-weight: 500;
+}
+/* SampleCards component specific styles */
+
+.sample-card-container {
+  padding: 2rem;
+  width: 280px;
+}
+
+@media (min-width: 640px) {
+  .sample-card-container {
+    width: 350px;
+  }
+}
+
+.sample-card-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 1.5rem;
+}
+
+.sample-card-emoji-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(126, 86, 218, 0.2);
+}
+
+.sample-card-subtext {
+  font-size: 16px;
+  color: rgba(63, 63, 63, 0.6);
+}
+/* Styles for CardCarousel component */
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-heading {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  padding-bottom: 1.25rem;
+}
+
+.carousel-step {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-title {
+  font-size: 20px;
+  color: white;
+}
+
+.carousel {
+  width: 100%;
+}
+
+.carousel-cards {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 1rem;
+  align-items: stretch;
+  max-width: 200px;
+}
+
+@media (min-width: 768px) {
+  .carousel-cards {
+    max-width: 200px;
+  }
+}
+
+.carousel-card {
+  grid-column: span 1;
+  height: 100%;
+}
+
+.carousel-card-content {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  height: 100%;
+}
+
+.carousel-nav {
+  margin-top: 1rem;
+}
+
+.carousel-description {
+  font-size: 0.875rem;
+  color: #4B5563; /* Tailwind gray-600 */
+}
+
+.carousel-buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.sample-card-typing-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sample-card-separator {
+  background-color: rgba(138, 138, 138, 0.25);
+  height: 2px;
+  border-radius: 999px;
+}
+
+.sample-card-button {
+  display: flex;
+  gap: 11px;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+  background-color: #7E56DA;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dotted #7E56DA;
+  border-radius: 9999px;
+  width: 40px;
+  height: 40px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #7E56DA;
+}
+
+.icon-wrapper-filled {
+  background-color: #7E56DA;
+  color: white;
+  width: 48px;
+  height: 48px;
+}
+
+.profile-group {
+  display: flex;
+  align-items: center;
+  margin-left: -10px;
+}
+
+.separator {
+  height: 2px;
+  background-color: rgba(138, 138, 138, 0.2);
+}
+
+.moderator-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.moderator-text {
+  color: #7E56DA;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.helper-text {
+  color: #929292;
+  font-size: 12px;
+}
+
+.vertical-divider {
+  width: 2px;
+  height: 30px;
+  background-color: rgba(138, 138, 138, 0.2);
+  margin: 0 1rem;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar-img {
+  width: 40px;
+  height: 40px;
+}
 
 .carousel-container {
   overflow: hidden;
