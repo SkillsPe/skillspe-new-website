@@ -13,7 +13,8 @@ import PlayStoreIcon from '../assets/play-store-icon.svg';
 
 const Footer = () => {
   return (
-    <footer className='footer'>
+    <div className='bg-white'>
+ <footer className='footer'>
       <div className='footer-left'>
         <div className='footer-logo-title'>
           <img src={SkillsPeLogo} alt='SkillsPe Logo' className='footer-logo' />
@@ -76,6 +77,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </div>
   );
 };
 
