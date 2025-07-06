@@ -30,16 +30,23 @@ const Card2 = ({ isActive = false }) => {
   const [fadeOut, setFadeOut] = useState(false);
   const [xOffset, setXOffset] = useState(0);
   const [filled, setFilled] = useState(false);
-  const [iconsVisible, setIconsVisible] = useState(false);
+  const [ iconVisible,setIconsVisible] = useState(false);
   const [showIcons, setShowIcons] = useState(false);
   const [icon2Moved, setIcon2Moved] = useState(false);
   const [yOffset, setYOffset] = useState(0);
   const [icon2AtCenter, setIcon2AtCenter] = useState(false);
   const [resetInvite, setResetInvite] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false); 
+  const [isAnimating, setIsAnimating] = useState(false);
   const containerRef = useRef(null);
   const inviteRef = useRef(null);
+  const icon2Ref = useRef(null);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const activateTheIcons = () => {
     setIconsVisible(true);
     setTimeout(() => setShowIcons(true), 700);
@@ -114,7 +121,7 @@ const Card2 = ({ isActive = false }) => {
   }, [fadeOut, resetInvite, isActive]);
 
   return (
-    <div className="vs-card w-[280px] sm:w-[350px] bg-white rounded-lg flex items-center justify-center ">
+    <div className="vs-card h-[430px] w-[280px] sm:w-[430px] bg-white rounded-xl flex  justify-center ">
       <div
         className="w-[100%] flex items-center justify-between px-6 relative"
         ref={containerRef}
@@ -125,6 +132,7 @@ const Card2 = ({ isActive = false }) => {
           className="avatar"
           animate={{
             opacity: fadeOut ? 0 : 1,
+            scale: 1,
             visibility: fadeOut ? "hidden" : "visible",
           }}
           transition={{ duration: 0.5 }}
@@ -210,12 +218,31 @@ const Card2 = ({ isActive = false }) => {
                   : icon2Moved
                   ? -xOffset + 2
                   : 0,
-                y: resetInvite ? yOffset - 64 : icon2Moved ? yOffset - 60 : 0,
+                y: resetInvite
+                  ? screenWidth <= 1443
+                    ? yOffset - 60
+                    : yOffset - 42
+                  : icon2Moved
+                  ? screenWidth <= 1443
+                    ? yOffset - 60
+                    : yOffset - 40
+                  : 0,
               }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
               onUpdate={(latest) => {
-                const targetX = -xOffset + 2;
-                const targetY = yOffset - 60;
+                const targetX = resetInvite
+                  ? -(2 * xOffset + 4)
+                  : icon2Moved
+                  ? -xOffset + 2
+                  : 0;
+
+                const targetY = resetInvite
+                  ? yOffset - 42
+                  : icon2Moved
+                  ? screenWidth <= 1443
+                    ? yOffset - 60
+                    : yOffset - 40
+                  : 0;
 
                 if (
                   icon2Moved &&
@@ -249,10 +276,8 @@ const Card3 = ({ isActive = false }) => {
   const [nextInvite, setNextInvite] = useState(false);
 
   useEffect(() => {
-
     setTimeout(() => {
       if (!isActive) {
-
         return;
       }
       setModeratorInviteFill(true);
@@ -378,9 +403,9 @@ const Card3 = ({ isActive = false }) => {
   }, [nextInvite]);
 
   return (
-    <div className="card3   w-[280px] sm:w-[350px]">
+    <div className="card3   w-[280px] sm:w-[430px] h-full">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between h-1/2">
         <AnimatePresence>
           {!hideInviteMotivators ? (
             <motion.div
@@ -556,12 +581,12 @@ const Card3 = ({ isActive = false }) => {
       </div>
 
       {/* Separator */}
-      <div className="h-[2px] bg-[#8A8A8A]/20"></div>
+      <div className="h-[2px] bg-[#8A8A8A]/20 "></div>
 
       {/* Moderator Bottom Section */}
-      <div>
-        { ((moderatorInviteFill && !showModeratorInfo) || !isActive)  && (
-          <div className="flex items-center justify-between">
+      <div className="h-1/2">
+        {((moderatorInviteFill && !showModeratorInfo) || !isActive) && (
+          <div className="flex h-full items-center justify-between ">
             <div className="text-[#7E56DA] text-[16px] font-medium">
               Invite
               <br />
@@ -594,7 +619,7 @@ const Card3 = ({ isActive = false }) => {
         )}
 
         {showModeratorInfo && (
-          <div className="mt-4 flex items-center justify-between">
+          <div className="mt-4 h-full flex items-center justify-between">
             {showModeratorSelected ? (
               <div className="text-[#7E56DA] text-[16px] font-medium">
                 Moderator
@@ -720,12 +745,11 @@ const TypingText = ({ isNotActive }) => {
   );
 };
 
-
 const Card4 = () => {
   const [quantity, setQuantity] = useState(5); // Static default value
 
   return (
-    <div className="card3 w-[280px] sm:w-[350px]">
+    <div className="card3 w-[280px] sm:w-[350px] ">
       <div className="flex flex-col ">
         <div className="flex gap-2 w-full">
           <div className="flex gap-2 py-[4px] items-center w-1/2 bg-[#7E56DA] rounded-md justify-center">
@@ -843,8 +867,8 @@ const Card4 = () => {
 };
 
 const sampleCards = (activeIndex) => [
-  <div className="p-8 w-[280px] sm:w-[350px]">
-    <div className="flex flex-col justify-between h-full  space-y-6 ">
+  <div className="p-8 py-14 w-[280px] sm:w-[430px] h-[430px]">
+    <div className="flex flex-col justify-between h-full   ">
       <div className="flex w-max items-center justify-center rounded-[8px] p-[8px] border border-[#7E56DA]/20">
         🏃
       </div>
@@ -858,7 +882,7 @@ const sampleCards = (activeIndex) => [
         <div className="bg-[#8A8A8A]/25 h-[2px] rounded-full"></div>
       </div>
 
-      <div className="text-white bg-[#7E56DA] text-[14px] px-2 py-1 rounded-[4px] flex gap-[11px] justify-center ">
+      <div className="font-satoshi text-white font-bold bg-[#7E56DA] text-[14px] px-2 py-2 rounded-[8px] flex gap-[11px] justify-center">
         Create Challenge
         <p>→</p>
       </div>
@@ -890,18 +914,22 @@ const CardCarousel = ({ cardBuilder, stepContent }) => {
     ...cards.slice(0, currentIndex),
   ];
 
-  const { title, description,step } = stepContent[currentIndex]; // ✅ Dynamic content
+  const { title, description, step } = stepContent[currentIndex]; // ✅ Dynamic content
 
   return (
     <div className="carousel-container overflow-hidden w-full">
-<h1 className="text-[24px] font-semibold leading-tight pb-5">
-  <span className="text-white/50 text-[16px]">{step}</span>
-  <br />
-  <span className="text-white text-[20px]">{title}</span>
-</h1>
+      <h1 className="pb-5">
+        <span className="text-white/50 text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px]">
+          {step}
+        </span>
+        <br />
+        <span className="text-white font-semibold text-[30px] sm:text-[34px] md:text-[38px] lg:text-[42px]">
+          {title}
+        </span>
+      </h1>
 
-      <div className="carousel w-full">
-        <div className="grid grid-flow-col auto-cols-max gap-4 items-stretch max-w-[200px] md:max-w-[200px]">
+      <div className="carousel w-full ">
+        <div className="grid grid-flow-col auto-cols-max gap-4 max-h-[430px] items-stretch max-w-[200px] md:max-w-[200px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -911,7 +939,7 @@ const CardCarousel = ({ cardBuilder, stepContent }) => {
               transition={{ duration: 0.2 }}
               className="col-span-1 h-full"
             >
-              <div className="bg-white rounded-lg h-full p-4">
+              <div className="bg-white rounded-3xl h-full p-4 ">
                 {React.cloneElement(cards[currentIndex], { isActive: true })}
               </div>
             </motion.div>
@@ -933,20 +961,20 @@ const CardCarousel = ({ cardBuilder, stepContent }) => {
                   opacity: index === 0 ? 0.3 : 0.4,
                   scale: index === 0 ? 0.9 : 1,
                   transition: {
-                    duration: 0.05,
+                    duration: 0.1,
                     ease: "easeInOut",
                   },
                 }}
                 transition={{
                   duration: 0.1,
                   type: "spring",
-                  stiffness: 200,
-                  damping: 10,
-                  mass: 0.4,
+                  stiffness: 100,
+                  damping: 15,
+                  mass: 0.6,
                 }}
                 className="col-span-1 h-full"
               >
-                <div className="bg-white rounded-lg h-full p-4">{card}</div>
+                <div className="bg-white rounded-3xl h-full p-4">{card}</div>
               </motion.div>
             ))}
           </AnimatePresence>
@@ -954,16 +982,16 @@ const CardCarousel = ({ cardBuilder, stepContent }) => {
       </div>
 
       {/* ✅ Step Description */}
-      <div className="nav-container mt-4">
-        <div className="nav-description text-sm text-gray-600">
+      <div className="flex mt-14 justify-between ">
+        <div className=" text-[28px] text-white/50 md:max-w-[60%] mt-4">
           <span>{description}</span>
         </div>
 
-        <div className="nav-buttons-wrapper mt-4 flex gap-2">
-          <button onClick={handlePrev} className="nav-btn">
+        <div className=" mt-4 flex gap-2">
+          <button onClick={handlePrev} className=" h-[60px] w-[60px]">
             <img src={LeftArrowBtn} alt="left arrow" />
           </button>
-          <button onClick={handleNext} className="nav-btn">
+          <button onClick={handleNext} className="h-[60px] w-[60px]">
             <img src={RightArrowBtn} alt="right arrow" />
           </button>
         </div>
@@ -1005,4 +1033,3 @@ export default function CardCarouselPreview() {
     </div>
   );
 }
-
