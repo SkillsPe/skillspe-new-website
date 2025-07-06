@@ -269,7 +269,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 120px);
-    margin-top:  0px;
+    margin-top: 0px;
     gap: 10px;
   }
 
@@ -1050,19 +1050,23 @@
   }
 
   .features-header > p {
-    width: 290px;
+    width: 363px;
     font-family: satoshi;
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
     font-weight: lighter;
     line-height: 24px;
     color: #3f3f3f;
   }
 
-  .features-header h1 {
-    font-size: 50px;
+  .features-header > h1 {
+    width: 450px;
+    font-size: 35px;
     color: #1b184f;
     margin-bottom: 8px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 0.3px;
   }
 
   .feature-image-container {

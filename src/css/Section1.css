@@ -236,7 +236,6 @@
   }
 
   .image1 {
-
     /* width: 95%; */
     border-radius: 12px;
     background-repeat: no-repeat;
@@ -577,6 +576,7 @@
     padding: 0 12px;
     gap: 10px; /* Keep space between icon and text */
     border-radius: 28px;
+    text-align: start;
   }
 
   .download-icon {
@@ -847,6 +847,3 @@
     font-size: 15px; /* Emphasized line */
   }
 }
-
-
-

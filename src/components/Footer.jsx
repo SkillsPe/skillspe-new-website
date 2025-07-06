@@ -36,7 +36,6 @@ const Footer = () => {
           <span>
             39/4/1, Bldg. 'B' Wing 'C' Shop No. 3, <br />
             Jai Bhavani Nagar,
-            <br />
             Pune City, Maharashtra - 411028, <br />
             India
           </span>
