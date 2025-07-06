@@ -88,7 +88,7 @@ export default function Section6() {
         {/* Image Container 4 */}
         <div className='feature-image feature-image-item4'>
           <img src={background7} alt='Not playing? Still earning' />
-          <div>
+          <div className=''>
             <div className='feature-image-text'>
               <h2 className='feature-heading feature-heading4'>
                 Not playing?

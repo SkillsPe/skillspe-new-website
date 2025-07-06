@@ -205,39 +205,41 @@ export default function Section4() {
   const [isDuo, setIsDuo] = useState(true);
 
   return (
-    <section className='challenge-section'>
+    <section className="challenge-section">
       {/* Top Text Block */}
       <div className="challenge-header px-4 py-6 md:px-10 md:py-8 lg:px-[100px] lg:py-[50px]">
-      <h1>
+        <h1>
           Kar Le Challenge,
           <br />
           Khud Se Ya Apne Dost Se!
         </h1>
-        <div className='highlight'>
+        <div className="highlight">
           Prove your Skills either way, Play
-          <span className={isDuo ? 'faded' : 'highlighted'}>SOLO</span>
-          <span className='mode-switch-image'>
+          <span className={isDuo ? "faded" : "highlighted"}>SOLO</span>
+          <span className="mode-switch-image">
             <FormGroup>
               <FormControlLabel
                 control={
                   <MaterialUISwitch
-                    sx={{ m: 1 }}
+                    sx={{
+                      m: 0.2,
+                    }}
                     checked={isDuo}
                     onChange={() => setIsDuo((prev) => !prev)}
                   />
                 }
-                label=''
+                label=""
               />
             </FormGroup>
           </span>
-          <span className={isDuo ? 'highlighted' : 'faded'}>DUO</span>
+          <span className={isDuo ? "highlighted" : "faded"}>DUO</span>
           {/* <img
             className='click-here-arrow'
             src={ClickHereArrow}
             alt='Click Here Arrow'
           /> */}
         </div>
-        <p className='subtext'>
+        <p className="subtext">
           <span>
             Create personal skill-based challenges, invite others, and get
             judged by your trusted circle. Compete solo or go head-to-head in
@@ -248,19 +250,17 @@ export default function Section4() {
 
       {/* Carousel Autoplay */}
 
-      <div className=''>
-        <div className='carousel'>
-        <AutoCarousel1 slides={isDuo ? duoSlides : soloSlides} />
-
+      <div className="">
+        <div className="carousel">
+          <AutoCarousel1 slides={isDuo ? duoSlides : soloSlides} />
         </div>
       </div>
       <img
-        className='challenge-image hidden sm:block'
+        className="challenge-image hidden sm:block"
         src={ChallengeCarousel}
-        alt='Challenge Carousel'
+        alt="Challenge Carousel"
       />
-      <div className='-mx-[100px] p-8 sm:p-0'>
-      </div>
+      <div className="-mx-[100px] p-8 sm:p-0"></div>
 
       {/* <CardCarousel /> */}
     </section>

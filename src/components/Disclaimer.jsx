@@ -12,10 +12,15 @@ const Disclaimer = () => {
 
       <div className="disclaimer-content">
         <div className="disclaimer-title">
-          <img src={WarningIcon} alt="Warning" className="disclaimer-icon" />
 
           <div className="disclaimer-text">
+            <div className='flex gap-2 items-end mb-[14px] '>
+            <img src={WarningIcon} alt="Warning" className="disclaimer-icon" />
+
             <h2>Disclaimer</h2>
+            </div>
+
+
             <p>
               Several deceptive emails, websites, blogs etc. claiming to be from or associated with
               Us may be circulated or are circulating on the Internet (“Deceptive Communication”).
