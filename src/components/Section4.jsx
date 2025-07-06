@@ -207,8 +207,8 @@ export default function Section4() {
   return (
     <section className='challenge-section'>
       {/* Top Text Block */}
-      <div className='challenge-header'>
-        <h1>
+      <div className="challenge-header px-4 py-6 md:px-10 md:py-8 lg:px-[100px] lg:py-[50px]">
+      <h1>
           Kar Le Challenge,
           <br />
           Khud Se Ya Apne Dost Se!
@@ -248,7 +248,7 @@ export default function Section4() {
 
       {/* Carousel Autoplay */}
 
-      <div className='carousel-container1'>
+      <div className=''>
         <div className='carousel'>
         <AutoCarousel1 slides={isDuo ? duoSlides : soloSlides} />
 

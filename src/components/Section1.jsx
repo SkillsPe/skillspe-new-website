@@ -15,7 +15,6 @@ export default function Section1() {
       </div>
 
       <br />
-      <br />
 
       <div className='image-container'>
         <div className='image-wrapper-item image1'></div>

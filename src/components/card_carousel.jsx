@@ -988,10 +988,10 @@ const CardCarousel = ({ cardBuilder, stepContent }) => {
         </div>
 
         <div className=" mt-4 flex gap-2">
-          <button onClick={handlePrev} className=" h-[60px] w-[60px]">
+          <button onClick={handlePrev} className="cursor-pointer h-[60px] w-[60px]">
             <img src={LeftArrowBtn} alt="left arrow" />
           </button>
-          <button onClick={handleNext} className="h-[60px] w-[60px]">
+          <button onClick={handleNext} className="cursor-pointer h-[60px] w-[60px]">
             <img src={RightArrowBtn} alt="right arrow" />
           </button>
         </div>
