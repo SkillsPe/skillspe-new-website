@@ -1,6 +1,10 @@
 .challenge-section {
+<<<<<<< HEAD
   border: 1px solid gray;
   padding: 50px 100px;
+=======
+  /* border: 1px solid gray; */
+>>>>>>> a397006 (WIP: local changes before pull)
   background-color: #f8f4ff;
   text-align: start;
   font-family: 'Sora', sans-serif;

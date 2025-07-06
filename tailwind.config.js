@@ -2,8 +2,9 @@
 module.exports = {
     content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
     theme: {
-      extend: {},
-    },
+        fontFamily: {
+            satoshi: ['Satoshi', 'sans-serif'],
+          },    },
     plugins: [
       require('@tailwindcss/aspect-ratio'),
     ],
