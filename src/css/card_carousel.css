@@ -7,7 +7,7 @@
 
 @media (min-width: 640px) {
   .card3 {
-    width: 350px;
+    width: 430px;
   }
 }
 
@@ -329,7 +329,7 @@
 .vs-card {
   /* border: 1px solid red; */
   display: flex;
-  height: 300px;
+  /* height: 300px; */
   justify-content: space-evenly;
   align-items: center;
   background-color: #f4f0ff;
@@ -366,11 +366,9 @@
 /* Card 3 */
 .card3 {
   /* border: 1px solid red; */
-  height: 300px;
   display: flex;
   flex-direction: column;
   padding: 20px;
-  justify-content: space-between;
 }
 
 @media (min-width: 320px) and (max-width: 500px) {
@@ -462,7 +460,7 @@
   .vs-card {
     /* border: 1px solid red; */
     display: flex;
-    height: 325px;
+    /* height: 325px; */
     justify-content: space-evenly;
     align-items: center;
     background-color: #f4f0ff;
@@ -477,10 +475,8 @@
   /* Card 3 */
   .card3 {
     /* border: 1px solid red; */
-    height: 325px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: stretch;
   }
 
@@ -582,7 +578,7 @@
 
   .vs-card {
     /* border: 1px solid red; */
-    height: 230px;
+    /* height: 230px; */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -597,11 +593,9 @@
   /* Card 3 */
   .card3 {
     /* border: 1px solid red; */
-    height: 230px;
     display: flex;
     flex-direction: column;
     padding: 20px;
-    justify-content: space-evenly;
     align-items: stretch;
   }
 
@@ -795,7 +789,7 @@
   .vs-card {
     /* border: 1px solid red; */
     display: flex;
-    height: 300px;
+    /* height: 300px; */
     justify-content: space-evenly;
     align-items: center;
   }
@@ -809,11 +803,9 @@
   /* Card 3 */
   .card3 {
     /* border: 1px solid red; */
-    height: 300px;
     display: flex;
     flex-direction: column;
     padding: 20px;
-    justify-content: space-evenly;
     align-items: stretch;
   }
 
@@ -922,7 +914,6 @@
   .vs-card {
     /* border: 1px solid red; */
     display: flex;
-    height: 300px;
     justify-content: space-evenly;
     align-items: center;
   }
@@ -936,11 +927,9 @@
   /* Card 3 */
   .card3 {
     /* border: 1px solid red; */
-    height: 400px;
     display: flex;
     flex-direction: column;
     padding: 20px;
-    justify-content: space-evenly;
     align-items: stretch;
   }
 
