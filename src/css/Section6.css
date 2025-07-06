@@ -231,7 +231,7 @@
   .features-section {
     /* border: 1px solid gray; */
     width: 100%;
-    padding: 60px 20px;
+    padding: 30px 20px;
     background-color: #f7f3ff;
     font-family: 'Sora', sans-serif;
   }
@@ -246,29 +246,30 @@
   }
 
   .features-header > p {
-    width: 206px;
+    width: 275px;
     font-family: satoshi;
-    font-size: 13px;
+    font-size: 15px;
     font-style: normal;
-    font-weight: lighter;
-    line-height: 20px;
     color: #3f3f3f;
+    position: relative;
+    bottom: 15px;
   }
 
   .features-header > h1 {
-    /* border: 1px solid black; */
-    font-size: 27px;
+    width: auto;
+    font-size: 25px;
     color: #1b184f;
     margin-bottom: 8px;
-    width: 90%;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
   }
-
   .feature-image-container {
     /* border: 1px solid red; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 120px);
-    margin-top: 20px;
+    margin-top:  0px;
     gap: 10px;
   }
 
@@ -429,6 +430,7 @@
     padding: 60px 40px;
     background-color: #f7f3ff;
     font-family: 'Sora', sans-serif;
+    padding: 40px 60px;
   }
 
   .features-header {
@@ -441,18 +443,21 @@
   }
 
   .features-header > p {
-    width: 363px;
+    width: 300px;
     font-family: satoshi;
-    font-size: 20px;
+    font-size: 18px;
+    font-style: normal;
     color: #3f3f3f;
-    margin-top: 40px;
   }
 
   .features-header > h1 {
-    width: 100%;
-    font-size: 40px;
+    width: 529px;
+    font-size: 35px;
     color: #1b184f;
     margin-bottom: 8px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
   }
 
   .feature-image-container {
@@ -648,7 +653,7 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .features-section {
     width: 100%;
-    padding: 50px 80px;
+    padding: 50px 100px;
     background-color: #f7f3ff;
     font-family: 'Sora', sans-serif;
   }
@@ -663,18 +668,21 @@
   }
 
   .features-header > p {
-    width: 350px;
+    width: 300px;
     font-family: satoshi;
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     color: #3f3f3f;
   }
 
   .features-header > h1 {
     width: 529px;
-    font-size: 40px;
+    font-size: 35px;
     color: #1b184f;
     margin-bottom: 8px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
   }
 
   .feature-image-container {

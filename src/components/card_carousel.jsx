@@ -30,7 +30,7 @@ const Card2 = ({ isActive = false }) => {
   const [fadeOut, setFadeOut] = useState(false);
   const [xOffset, setXOffset] = useState(0);
   const [filled, setFilled] = useState(false);
-  const [iconsVisible, setIconsVisible] = useState(false);
+  const [ setIconsVisible] = useState(false);
   const [showIcons, setShowIcons] = useState(false);
   const [icon2Moved, setIcon2Moved] = useState(false);
   const [yOffset, setYOffset] = useState(0);

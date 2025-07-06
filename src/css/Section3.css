@@ -57,7 +57,8 @@
 
 @media (min-width: 426px) and (max-width: 768px) {
   .private-challenges-section {
-    padding: 60px 40px;
+    /* border: 1px solid red; */
+    padding: 40px 60px;
   }
 
   .video-container {
