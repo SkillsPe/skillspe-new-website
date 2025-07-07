@@ -14,11 +14,11 @@ import { useEffect, useState } from "react";
 import Disclaimer from "./Disclaimer.jsx";
 
 export default function Section6() {
-  const [isWideScreen, setIsWideScreen] = useState(window.innerWidth >= 906);
+  const [isWideScreen, setIsWideScreen] = useState(window.innerWidth >= 760);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsWideScreen(window.innerWidth >= 906);
+      setIsWideScreen(window.innerWidth >= 760);
     };
 
     window.addEventListener("resize", handleResize);
@@ -199,7 +199,7 @@ function Section6CSS() {
         </div>
 
         {/* Image Container 2 */}
-        <div className="feature-image feature-image-item2">
+        <div className="feature-image feature-image-item2 ">
           <img src={background6} alt="Your Skill Portfolio" />
           <div>
             <div className="feature-image-text">

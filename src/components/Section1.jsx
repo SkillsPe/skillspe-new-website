@@ -38,7 +38,7 @@ export default function Section1() {
           >
             <FaApple className='download-icon' />
             <div className='download-text'>
-              <span>Download On the</span>
+              <span>Download On The</span>
               <span className='bold-text'>App Store</span>
             </div>
           </a>
@@ -51,7 +51,7 @@ export default function Section1() {
           >
             <IoLogoGooglePlaystore className='download-icon' />
             <div className='download-text'>
-              <span>GET IT ON</span>
+              <span>Get It On</span>
               <span className='bold-text'>Google Play</span>
             </div>
           </a>

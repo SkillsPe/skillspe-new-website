@@ -125,26 +125,28 @@ const Card2 = ({ isActive = false }) => {
   }, [fadeOut, resetInvite, isActive]);
 
   return (
-    <div className="vs-card h-[430px] w-[280px] sm:w-[430px] bg-white rounded-xl flex  justify-center ">
+<div className="vs-card h-[430px] w-[280px] sm:w-[430px] bg-white rounded-xl flex justify-center relative overflow-hidden">
+  <div className="absolute w-full h-full p-4">
+    <AnimatePresence>
+      {showMap && (
+        <motion.img
+          src={MapImage}
+          alt="map"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.5 }}
+          className="w-full h-full object-cover" 
+        />
+      )}
+    </AnimatePresence>
+
+</div>
       <div
         className="w-[100%] flex items-center justify-between px-6 relative"
         ref={containerRef}
       >
-<div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 p-8 -translate-y-1/2 h-[470px] w-[300px] sm:w-[430px] ">
-  <AnimatePresence>
-    {showMap && (
-      <motion.img
-        src={MapImage}
-        alt="map"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.8 }}
-        transition={{ duration: 0.5 }}
-        className="w-full h-full object-contain"
-      />
-    )}
-  </AnimatePresence>
-</div>
+
 
 
 

@@ -2,9 +2,9 @@ import PhoneImage from '../assets/mobile-image.svg';
 
 export default function Section2() {
   return (
-    <div className="w-full flex flex-col lg:flex-row items-start justify-between bg-[#f4efff] px-5 sm:px-8 md:px-10 lg:px-20 xl:px-24 2xl:px-32 py-12 gap-10 overflow-hidden">
+    <div className="w-full flex flex-col  lg:flex-row items-center  lg:items-start justify-between bg-[#f4efff] px-5 sm:px-8 md:px-10 lg:px-20 xl:px-24 2xl:px-32 py-12 gap-10 overflow-hidden">
       {/* Left Panel */}
-      <div className="flex-1 font-[sora] text-center lg:text-left relative top-0 md:top-10 xl:top-[90px]">
+      <div className="flex-1 font-[sora]  text-center lg:text-left relative top-0 md:top-10 xl:top-[90px]">
         <h1 className="text-[26px] sm:text-[28px] md:text-[36px] lg:text-[42px] xl:text-[52px] font-bold text-[#1b184f] leading-tight">
           Jo Socha Wahi <br /> Sach Nikla?
         </h1>

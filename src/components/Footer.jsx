@@ -45,7 +45,7 @@ const Footer = () => {
             <span className="max-w-md">
               39/4/1, Building 'B', Wing 'C', Shop No. 3,
               <br /> Jai Bhavani Nagar,
-              <br />
+              <br className="hidden"/>
               Pune City, Maharashtra 411028,
               <br /> India
             </span>
@@ -61,10 +61,10 @@ const Footer = () => {
           <div className="footer-center-social-container">
             <h3>Follow Us</h3>
             <div className="social-icons">
-              <a href="#">
+              <a href="https://www.instagram.com/skillspe_/" target="_blank">
                 <img src={InstagramIcon} alt="Instagram" />
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/company/skillspe/posts/?feedView=all" target="_blank">
                 <img src={LinkedInIcon} alt="LinkedIn" />
               </a>
             </div>
