@@ -26,26 +26,39 @@ export default function Section1() {
       <br />
 
       <div className='download-container'>
-        <div className='download-section'>
-          <span>Start Winning, Download Now!</span>
-          <div className='download-button'>
-            <div className='download-button-item1'>
-              <FaApple className='download-icon' />
-              <div className='download-text'>
-                <span>Download On the</span>
-                <span className='bold-text'>App Store</span>
-              </div>
+      <div className='download-section'>
+        <span>Start Winning, Download Now!</span>
+        <div className='download-button'>
+
+          <a
+            href="https://apps.apple.com/in/app/skillspe/id6572280569" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className='download-button-item1'
+          >
+            <FaApple className='download-icon' />
+            <div className='download-text'>
+              <span>Download On the</span>
+              <span className='bold-text'>App Store</span>
             </div>
-            <div className='download-button-item2'>
-              <IoLogoGooglePlaystore className='download-icon' />
-              <div className='download-text'>
-                <span>GET IT ON</span>
-                <span className='bold-text'>Google Play</span>
-              </div>
+          </a>
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.application.skillspe&hl=en" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className='download-button-item2'
+          >
+            <IoLogoGooglePlaystore className='download-icon' />
+            <div className='download-text'>
+              <span>GET IT ON</span>
+              <span className='bold-text'>Google Play</span>
             </div>
-          </div>
+          </a>
+
         </div>
       </div>
+    </div>
     </div>
   );
 }

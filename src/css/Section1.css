@@ -72,15 +72,22 @@
 }
 
 .image1 {
-  /* border: 1px solid red; */
   background-image: url('../assets/image1.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 15px;
-  /* width: 80%; */
   height: 21rem;
 }
+
+@media (max-width: 768px) {
+  .image1 {
+    margin-top: 10px;
+    height: 17rem;
+
+  }
+}
+
 
 .image2 {
   /* border: 1px solid red; */

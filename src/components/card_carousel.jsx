@@ -14,6 +14,7 @@ import MapImage from '../assets/map.svg';
 import VsImage from "../assets/vs-image.svg";
 import ProfileIcon1 from "../assets/animate_profile_icon1.svg";
 import Check from "../assets/check.svg";
+import { HiPlusSmall } from "react-icons/hi2";
 
 import ProfileIcon2 from "../assets/animate_profile_icon2.svg";
 import ProfileIcon5 from "../assets/animate_profile_icon5.svg";
@@ -21,7 +22,7 @@ import ProfileIcon6 from "../assets/animate_profile_icon6.svg";
 import ProfileIcon3 from "../assets/animate_profile_icon3.svg";
 import Rupee from "../assets/ruppee.svg";
 import Quantity from "../assets/quantity.svg";
-
+// import { HiPlusSmall } from 'react-icons/fa';
 import ProfileIcon4 from "../assets/animate_profile_icon4.svg";
 import InviteMotivatorsImage from "../assets/invite-motivators-image.svg";
 import InviteModeratorImage from "../assets/invite-moderators-image.svg";
@@ -183,7 +184,8 @@ const Card2 = ({ isActive = false }) => {
                 transition={{ duration: 0.3 }}
                 className="flex items-center justify-center border-2 border-dotted border-[#7E56DA] rounded-full w-12 h-12 text-xl font-bold text-[#7E56DA]"
               >
-                +
+                  <HiPlusSmall className="text-[#7E56dA] text-md" />
+
               </motion.div>
             ) : (
               <motion.div
@@ -196,7 +198,8 @@ const Card2 = ({ isActive = false }) => {
                 className="p-1 border border-[#7E56DA]/50 rounded-full"
               >
                 <div className="flex items-center justify-center bg-[#7E56DA] border-2 border-dotted border-[#7E56DA] rounded-full w-12 h-12 text-xl font-bold text-white">
-                  +
+                                   <HiPlusSmall className="text-white  text-md" />
+
                 </div>
               </motion.div>
             )}
@@ -483,7 +486,8 @@ const Card3 = ({ isActive = false }) => {
                     transition={{ duration: 0.6 }}
                     className="flex items-center justify-center border-2 border-dotted border-[#7E56DA] rounded-full w-10 h-10 text-xl font-bold text-[#7E56DA]"
                   >
-                    +
+                                      <HiPlusSmall className="text-[#7E56dA] text-md" />
+
                   </motion.div>
                 ) : (
                   <motion.div
@@ -495,7 +499,8 @@ const Card3 = ({ isActive = false }) => {
                     transition={{ duration: 0.6 }}
                     className="flex items-center justify-center bg-[#7E56DA] border-2 border-dotted border-[#7E56DA] rounded-full w-12 h-12 text-xl font-bold text-white"
                   >
-                    +
+                                      <HiPlusSmall className="text-white text-md" />
+
                   </motion.div>
                 ))}
             </AnimatePresence>
@@ -622,7 +627,8 @@ const Card3 = ({ isActive = false }) => {
                   transition={{ duration: 0.8 }}
                   className="flex items-center justify-center border-2 border-dotted border-[#7E56DA] rounded-full w-12 h-12 text-xl font-bold text-[#7E56DA]"
                 >
-                  +
+                                    <HiPlusSmall className="text-[#7E56dA] text-md" />
+
                 </motion.div>
               ) : (
                 <motion.div
@@ -632,7 +638,8 @@ const Card3 = ({ isActive = false }) => {
                   transition={{ duration: 0.8 }}
                   className="flex items-center justify-center bg-[#7E56DA] border-2 border-dotted border-[#7E56DA] rounded-full w-12 h-12 text-xl font-bold text-white"
                 >
-                  +
+                                    <HiPlusSmall className="text-white text-md" />
+
                 </motion.div>
               )}
             </div>
@@ -939,14 +946,27 @@ const CardCarousel = ({ cardBuilder, stepContent }) => {
 
   return (
     <div className="carousel-container overflow-hidden w-full">
-      <h1 className="pb-5">
-        <span className="text-white/50 text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px]">
+      <h1 className="pb-5 flex justify-between items-end">
+        <div className="">
+        <span className="text-white/50 text-[12px] md:text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px]">
           {step}
         </span>
         <br />
-        <span className="text-white font-semibold text-[30px] sm:text-[34px] md:text-[38px] lg:text-[42px]">
+        <span className="text-white   font-semibold text-[18px] md:text-[30px] sm:text-[34px] md:text-[38px] lg:text-[42px]">
           {title}
+
+        
         </span>
+        </div>
+      
+<div className="block md:hidden mt-4 flex gap-2 px-2">
+          <button onClick={handlePrev} className="cursor-pointer h-[34px] w-[34px]">
+            <img src={LeftArrowBtn} alt="left arrow" />
+          </button>
+          <button onClick={handleNext} className="cursor-pointer h-[34px] w-[34px]">
+            <img src={RightArrowBtn} alt="right arrow" />
+          </button>
+        </div>
       </h1>
 
       <div className="carousel w-full ">
@@ -1003,12 +1023,12 @@ const CardCarousel = ({ cardBuilder, stepContent }) => {
       </div>
 
       {/* ✅ Step Description */}
-      <div className="flex mt-14 justify-between ">
-        <div className=" text-[28px] text-white/50 md:max-w-[60%] mt-4">
+      <div className="flex mt-8 md:mt-14 justify-between ">
+        <div className="text-[13px] md:text-[28px] text-white/50 md:max-w-[60%] mt-4">
           <span>{description}</span>
         </div>
 
-        <div className=" mt-4 flex gap-2">
+        <div className="hidden md:block mt-4 flex gap-2">
           <button onClick={handlePrev} className="cursor-pointer h-[60px] w-[60px]">
             <img src={LeftArrowBtn} alt="left arrow" />
           </button>

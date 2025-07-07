@@ -16,6 +16,7 @@ import DuoImage1 from "../assets/duo-carousel-image1.svg";
 import DuoImage2 from "../assets/duo-carousel-image2.svg";
 import DuoImage3 from "../assets/duo-carousel-image3.svg";
 import SoloImage1 from "../assets/solo-carousel-image1.svg";
+import ClickHereLarge from "../assets/click_here_large.svg";
 import SoloImage2 from "../assets/solo-carousel-image2.svg";
 import ClickHere from "../assets/click_here.svg";
 
@@ -159,50 +160,6 @@ const AutoCarousel1 = ({ slides = [], delay = 4000 }) => {
   );
 };
 
-// const AutoCarousel = (props) => {
-//   const [emblaRef, emblaApi] = useEmblaCarousel(
-//     { loop: true, align: 'center' },
-//     [Autoplay({ delay: 4000 })]
-//   );
-//   const [selectedIndex, setSelectedIndex] = useState(0);
-
-//   const slides = props.slides || [];
-
-//   const onSelect = useCallback(() => {
-//     if (!emblaApi) return;
-//     setSelectedIndex(emblaApi.selectedScrollSnap());
-//   }, [emblaApi]);
-
-//   useEffect(() => {
-//     if (!emblaApi) return;
-//     emblaApi.on('select', onSelect);
-//     onSelect();
-//   }, [emblaApi, onSelect]);
-
-//   return (
-//     <div className='embla'>
-//       <div className='embla__viewport' ref={emblaRef}>
-//         <div className='embla__container'>
-//           {slides.map((img, index) => (
-//             <div
-//               className={`embla__slide ${
-//                 selectedIndex === index ? 'is-active' : 'is-fade'
-//               }`}
-//               key={index}
-//             >
-//               <img
-//                 src={img}
-//                 alt={`slide-${index}`}
-//                 className='embla__slide__img'
-//               />
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
 export default function Section4() {
   const [isDuo, setIsDuo] = useState(true);
 
@@ -210,38 +167,54 @@ export default function Section4() {
     <section className="challenge-section">
       {/* Top Text Block */}
       <div className="challenge-header px-4 py-6 md:px-10 md:py-8 lg:px-[100px] lg:py-[50px]">
-        <h1>
+        <h1 className="text-[#1b184f] text-[20px] lg:text-[50px] font-bold mb-2 tracking-[0]">
           Kar Le Challenge,
           <br />
           Khud Se Ya Apne Dost Se!
         </h1>
         <div className="highlight">
-          Prove your Skills either way, Play
-          <span className={isDuo ? "faded" : "highlighted"}>SOLO</span>
+          <p className="text-[16px] lg:text-[36px] font-semibold text-[#7E56DA]">
+            {" "}
+            Prove your Skills either way, Play
+          </p>
+          <span className={isDuo ? "faded" : "highlighted"}>Solo</span>
           <div>
             <img />
           </div>
           <span className="mode-switch-image">
-            <FormGroup>
-              <FormControlLabel
-                control={
-                  <MaterialUISwitch
-                    sx={{
-                      m: 0.2,
-                    }}
-                    checked={isDuo}
-                    onChange={() => setIsDuo((prev) => !prev)}
-                  />
-                }
-                label=""
-              />
-            </FormGroup>
+            <div className="relative inline-block w-fit">
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <MaterialUISwitch
+                      sx={{ m: 0.2 }}
+                      checked={isDuo}
+                      onChange={() => setIsDuo((prev) => !prev)}
+                    />
+                  }
+                  label=""
+                />
+              </FormGroup>
+
+              {/* Large Click Image: Only visible on lg and up */}
+              <img
+  src={ClickHereLarge}
+  alt="Click here large"
+  className="hidden lg:block absolute -top-20 left-[160%] -translate-x-1/2 h-auto w-[200px] max-w-none"
+/>
+
+<img
+  src={ClickHereArrow}
+  alt="Click here arrow"
+  className="block lg:hidden absolute top-1 left-[90%] ml-2 h-auto w-[120px] max-w-none"
+/>
+
+            </div>
           </span>
+          <div className="w-[120px] lg:hidden"></div>
           <div className={isDuo ? "highlighted" : "faded"}>Duo</div>
-         
-         
         </div>
-        <p className="subtext md:w-[70%] lg:w-[40%] pt-2">
+        <p className="text-[#3F3F3F] text-[13px] lg:text-[26px] md:w-[70%] lg:w-[70%] pt-2">
           <span>
             Create personal skill-based challenges, invite others, and get
             judged by your trusted circle. Compete solo or go head-to-head in

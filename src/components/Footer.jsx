@@ -32,16 +32,18 @@ const Footer = () => {
           <img src={MailIcon} alt='Mail Icon' />
           <span>engineering@skillspe.com</span>
         </p>
-        <p className='footer-contact-item location'>
-          <img src={LocationIcon} alt='Location Icon' />
-          <span>
-            39/4/1, Bldg. 'B' Wing 'C' Shop No. 3, <br />
-            Jai Bhavani Nagar,
-            <br />
-            Pune City, Maharashtra - 411028, <br />
-            India
-          </span>
-        </p>
+        <p className="flex items-center space-x-3  text-sm sm:text-base md:text-lg leading-relaxed">
+  <img
+    src={LocationIcon}
+    alt="Location Icon"
+    className="w-5 h-5 mt-1 shrink-0 sm:w-6 sm:h-6"
+  />
+  <span className="max-w-md">
+    39/4/1, Building 'B', Wing 'C', Shop No. 3,<br/> Jai Bhavani Nagar,<br />
+    Pune City, Maharashtra 411028,<br/> India
+  </span>
+</p>
+
       </div>
 
       <div className='footer-center'>
@@ -66,14 +68,26 @@ const Footer = () => {
       <div className='footer-right'>
         <h4 className=''>Download App Now</h4>
         <div className='footer-app-icons'>
-          <div className='footer-app-icon'>
-            <img src={AppleIcon} alt='Apple Icon' />
-            <span>App Store</span>
-          </div>
-          <div className='footer-app-icon'>
-            <img src={PlayStoreIcon} alt='Play Store Icon' />
-            <span>Google Play</span>
-          </div>
+        <a
+  href="https://apps.apple.com/in/app/skillspe/id6572280569"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="footer-app-icon"
+>
+  <img src={AppleIcon} alt="Apple Icon" />
+  <span>App Store</span>
+</a>
+
+<a
+            href="https://play.google.com/store/apps/details?id=com.application.skillspe&hl=en" 
+            target="_blank"
+  rel="noopener noreferrer"
+  className="footer-app-icon"
+>
+  <img src={PlayStoreIcon} alt="Play Store Icon" />
+  <span>Google Play</span>
+</a>
+
         </div>
       </div>
     </footer>
