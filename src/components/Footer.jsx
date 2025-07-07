@@ -59,7 +59,7 @@ const Footer = () => {
           <a href="#">Terms & Conditions</a>
 
           <div className="footer-center-social-container">
-            <h3>Follow Us</h3>
+            <h3 className="">Follow Us</h3>
             <div className="social-icons">
               <a href="https://www.instagram.com/skillspe_/" target="_blank">
                 <img src={InstagramIcon} alt="Instagram" />

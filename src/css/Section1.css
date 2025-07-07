@@ -423,7 +423,7 @@
   }
 
   .download-button {
-    gap: 20px;
+    gap: 12px;
     justify-content: center;
     margin-top: 10px;
   }
@@ -574,7 +574,7 @@
   }
 
   .download-button {
-    gap: 20px; /* Add spacing between the two buttons */
+    gap: 12px; /* Add spacing between the two buttons */
     justify-content: center; /* Center them horizontally */
     margin-top: 20px;
   }
@@ -597,7 +597,7 @@
   }
 
   .download-text span {
-    font-size: 13px; /* Normal line */
+    font-size: 10px; /* Normal line */
   }
 
   .bold-text {
@@ -700,14 +700,14 @@
   }
 
   .download-button {
-    gap: 20px; /* Add spacing between the two buttons */
+    gap: 12px; /* Add spacing between the two buttons */
     justify-content: center; /* Center them horizontally */
     margin-top: 20px;
   }
 
   .download-button-item1,
   .download-button-item2 {
-    width: 175px; /* Maintain good width */
+    width: 145px; /* Maintain good width */
     height: 50px; /* Slightly reduced height */
     padding: 0 12px;
     gap: 10px; /* Keep space between icon and text */
@@ -723,7 +723,7 @@
   }
 
   .download-text span {
-    font-size: 13px; /* Normal line */
+    font-size: 10px; /* Normal line */
   }
 
   .bold-text {
@@ -826,7 +826,7 @@
   }
 
   .download-button {
-    gap: 20px; /* Add spacing between the two buttons */
+    gap: 12px; /* Add spacing between the two buttons */
     justify-content: center; /* Center them horizontally */
     margin-top: 20px;
   }
@@ -849,7 +849,7 @@
   }
 
   .download-text span {
-    font-size: 13px; /* Normal line */
+    font-size: 10px; /* Normal line */
   }
 
   .bold-text {

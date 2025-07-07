@@ -34,11 +34,11 @@ function Section6Tailwind() {
     <section className="w-full bg-[#f7f3ff] font-sora px-6 md:px-10 lg:px-24 py-10 md:py-16">
       {/* Header */}
       <div className="text-left mb-10 max-w-[50%]">
-        <h1 className="text-[#1b184f] text-[2rem] lg:text-[50px] font-bold mb-2 tracking-[0]">
+        <h1 className="text-[#1b184f] text-[2rem] lg:text-[50px] font-semibold mb-2 tracking-[0]  leading-none">
           Features Aise, Jo Banaye Skills Ko Power Play!
         </h1>
-        <p className="text-[#3f3f3f] text-[16px] leading-6 font-light tracking-[0] font-satoshi max-w-[290px]">
-          Discover a smarter way to grow, earn, and win with your skills!
+        <p className="text-[#3f3f3f] text-[16px] pt-8 lg:text-[26px] leading-6 font-light tracking-[0] font-satoshi ">
+          Discover a smarter way to grow, earn,<br />and win with your skills!
         </p>
       </div>
 
@@ -66,7 +66,7 @@ function Section6Tailwind() {
           <img
             src={tickImage}
             alt="tick"
-            className="absolute bottom-[25%] right-0 w-[60px] sm:w-[80px] md:w-[100px] lg:w-[130px] xl:w-[150px] z-10"
+            className="absolute bottom-[10%] right-0 w-[60px] sm:w-[80px] md:w-[170px] lg:w-[170px] xl:w-[200px] z-10"
           />
         </div>
 
@@ -98,7 +98,7 @@ function Section6Tailwind() {
                 <img
                   src={graphImage}
                   alt="graph"
-                  className="absolute right-0 top-[-10%] w-[70%] sm:w-[60%] md:w-[50%] lg:w-[40%] h-auto max-w-[300px] sm:max-w-[400px] lg:max-w-[500px]"
+                  className="absolute right-0 top-[10%] xl:top-[-10%] w-[70%] sm:w-[60%] md:w-[50%] lg:w-[40%] h-auto max-w-[300px] sm:max-w-[400px] lg:max-w-[500px]"
                 />
             </div>
           </div>
@@ -126,7 +126,7 @@ function Section6Tailwind() {
           <img
             src={archerImage}
             alt="archer"
-            className="absolute bottom-[25%] left-0 w-[60px] sm:w-[80px] md:w-[100px] lg:w-[130px] xl:w-[150px] z-10"
+            className="absolute bottom-[5%] -left-5 w-[60px] sm:w-[80px] md:w-[170px] lg:w-[170px] xl:w-[200px] z-10"
           />
         </div>
 
@@ -156,7 +156,7 @@ function Section6Tailwind() {
           <img
             src={handImage}
             alt="hand"
-            className="absolute top-[25%] right-0 w-[100px] sm:w-[140px] md:w-[180px] lg:w-[250px] h-auto z-10"
+            className="absolute top-[25%] right-0 w-[100px] sm:w-[140px] md:w-[270px] lg:w-[300px] h-auto z-10"
           />
         </div>
       </div>

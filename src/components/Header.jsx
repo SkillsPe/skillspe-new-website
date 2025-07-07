@@ -27,8 +27,13 @@ export default function Header({ visible, setShowSignupModal }) {
     <div className="header">
       {/* Logo */}
       <div className="logo-container">
-        <img src={SkillsPeLogo} alt="SkillsPe Logo" className="logo-image" />
-        <span className="logo-text">SkillsPe</span>
+      <img
+  src={SkillsPeLogo}
+  alt="SkillsPe Logo"
+  className="drop-shadow-lg drop-shadow-black/30"
+/>
+
+      <span className="logo-text drop-shadow-lg drop-shadow-black/30">SkillsPe</span>
       </div>
 
       {/* Desktop Nav */}

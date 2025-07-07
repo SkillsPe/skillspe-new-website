@@ -1,10 +1,10 @@
 import CardCarousel from './card_carousel.jsx';
 import '../css/Section5.css';
 
-function Section5() {
+function Section5({isDuo}) {
   return (
     <div className='card-container' >
-      <CardCarousel />
+      <CardCarousel isDuo={isDuo}/>
     </div>
   );
 }

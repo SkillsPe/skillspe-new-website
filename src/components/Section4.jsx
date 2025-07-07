@@ -7,6 +7,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 // import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from "embla-carousel-autoplay";
+import { FaUser, FaUsers } from "react-icons/fa";
+import { MdPeopleAlt } from "react-icons/md";
 
 // importing components
 import CardCarousel from "./card_carousel";
@@ -30,6 +32,7 @@ import SoloImage4 from "../assets/solo-carousel-image4.svg";
 import SoloIcon from "../assets/solo-icon-image.svg";
 import DuoIcon from "../assets/duo-icon-image.svg";
 import ChallengeCarousel from "../assets/Section4_Image2.svg";
+import ChallengeCarouselSolo from "../assets/challenger_solo.svg";
 
 // Importing css files
 import "../css/Section4.css";
@@ -88,7 +91,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 const duoSlides = [DuoImage1, DuoImage2, DuoImage3];
-const soloSlides = [SoloImage1, SoloImage2, SoloImage3, SoloImage4];
+const soloSlides = [SoloImage1, SoloImage2, SoloImage3];
 const mobileDuoSlides = [MobileDuoImage1, MobileDuoImage2, MobileDuoImage3];
 const mobileSingleSlides = [
   MobileSoloImage1,
@@ -123,14 +126,14 @@ const AutoCarousel1 = ({ slides = [], delay = 4000 }) => {
     left: {
       scale: 0.7,
       x: "-100%",
-      opacity: 0.1,
+      opacity: 0.02,
       filter: "blur(2px)",
       // zIndex: 2,
     },
     right: {
       scale: 0.7,
       x: "100%",
-      opacity: 0.1,
+      opacity: 0.02,
       filter: "blur(2px)",
       // zIndex: 2,
     },
@@ -156,7 +159,7 @@ const AutoCarousel1 = ({ slides = [], delay = 4000 }) => {
               type: "spring",
               stiffness: 150,
               damping: 20,
-              duration: 0.5,
+              duration: 1,
             }}
           >
             <img
@@ -171,8 +174,7 @@ const AutoCarousel1 = ({ slides = [], delay = 4000 }) => {
   );
 };
 
-export default function Section4() {
-  const [isDuo, setIsDuo] = useState(true);
+export default function Section4({ isDuo, setIsDuo }) {
 
   return (
     <section className="challenge-section">
@@ -188,24 +190,55 @@ export default function Section4() {
             {" "}
             Prove your Skills either way, Play
           </p>
-          <span className={isDuo ? "faded" : "highlighted"}>Solo</span>
+          <span
+            className={`text-[16px] lg:text-[36px] text-semibold ${
+              isDuo ? "faded" : "highlighted"
+            }`}
+          >
+            Solo
+          </span>
           <div>
             <img />
           </div>
           <span className="mode-switch-image">
             <div className="relative inline-block w-fit">
-              <FormGroup>
-                <FormControlLabel
-                  control={
-                    <MaterialUISwitch
-                      sx={{ m: 0.2 }}
-                      checked={isDuo}
-                      onChange={() => setIsDuo((prev) => !prev)}
-                    />
-                  }
-                  label=""
+              <div
+                onClick={() => setIsDuo(!isDuo)}
+                className="w-[78px] h-[40px] relative bg-[#7E56DA] border-2 border-white px-[8px] py-[5px] rounded-full flex items-center justify-between mr-1 cursor-pointer relative transition-all duration-300"
+                style={{
+                  boxShadow: `
+          0 2px 4px rgba(255, 52, 193, 0.1),
+          0 2px 6px rgba(255, 255, 255, 0.1),
+          0 4px 8px rgba(0, 0, 0, 0.25),
+          0 6px 12px rgba(255, 255, 255, 0.25)
+        `,
+                }}
+              >
+                {/* Toggle Circle Behind Icons */}
+                <div
+                  className={` w-[32px] h-[32px]  bg-white rounded-full shadow-md top-1 left-1 transition-transform duration-300 ${
+                    isDuo ? "translate-x-[30px]" : "translate-x-[0px]"
+                  }`}
                 />
-              </FormGroup>
+
+                {/* Icons ABOVE the toggle */}
+                <div className="absolute z-10 flex w-full gap-4 items-center px-2 text-[16px]">
+                  <FaUser
+                    className={
+                      !isDuo
+                        ? "opacity-100 text-[#7E56DA] "
+                        : "opacity-40 text-white"
+                    }
+                  />
+                  <MdPeopleAlt
+                    className={
+                      isDuo
+                        ? "opacity-100 text-[#7E56DA] "
+                        : "opacity-40 text-white "
+                    }
+                  />
+                </div>
+              </div>
 
               {/* Large Click Image: Only visible on lg and up */}
               <img
@@ -222,12 +255,19 @@ export default function Section4() {
             </div>
           </span>
           <div className="w-[120px] lg:hidden"></div>
-          <div className={isDuo ? "highlighted" : "faded"}>Duo</div>
+          <span
+            className={`text-[16px] lg:text-[36px] text-semibold ${
+              !isDuo ? "faded" : "highlighted"
+            }`}
+          >
+            Duo
+          </span>
         </div>
         <p className="text-[#3F3F3F] text-[13px] lg:text-[26px] md:w-[70%] lg:w-[70%] pt-2">
           <span>
             Create personal skill-based challenges, invite others, and get
-            judged by your trusted circle. Compete solo or go head-to-head in
+            judged
+            <br /> by your trusted circle. Compete solo or go head-to-head in
             Duo mode.
           </span>
         </p>
@@ -251,7 +291,7 @@ export default function Section4() {
       </div>
       <img
         className="challenge-image hidden sm:block"
-        src={ChallengeCarousel}
+        src={isDuo ? ChallengeCarousel : ChallengeCarouselSolo}
         alt="Challenge Carousel"
       />
       <div className="-mx-[100px] p-8 sm:p-0"></div>

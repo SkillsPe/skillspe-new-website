@@ -10,7 +10,7 @@ import RightArrowBtn from "../assets/right-arrow-btn.svg";
 import Challenger1 from "../assets/challenger1.svg";
 import InviteChallenger from "../assets/invite-challenger-image.svg";
 import InviteProfileIcon from "../assets/invite_profile.svg";
-import MapImage from '../assets/map.svg';
+import MapImage from "../assets/map.svg";
 import VsImage from "../assets/vs-image.svg";
 import ProfileIcon1 from "../assets/animate_profile_icon1.svg";
 import Check from "../assets/check.svg";
@@ -31,9 +31,9 @@ const Card2 = ({ isActive = false }) => {
   const [fadeOut, setFadeOut] = useState(false);
   const [xOffset, setXOffset] = useState(0);
   const [filled, setFilled] = useState(false);
-  const [ iconVisible,setIconsVisible] = useState(false);
+  const [iconVisible, setIconsVisible] = useState(false);
   const [showIcons, setShowIcons] = useState(false);
-  const [showMap,setShowMap] = useState(false);
+  const [showMap, setShowMap] = useState(false);
   const [icon2Moved, setIcon2Moved] = useState(false);
   const [yOffset, setYOffset] = useState(0);
   const [icon2AtCenter, setIcon2AtCenter] = useState(false);
@@ -52,7 +52,7 @@ const Card2 = ({ isActive = false }) => {
   const activateTheIcons = () => {
     setIconsVisible(true);
     setTimeout(() => setShowIcons(true), 700);
-    setTimeout(() => setShowMap(true),700);
+    setTimeout(() => setShowMap(true), 700);
     setTimeout(() => setIcon2Moved(true), 3000);
   };
 
@@ -125,31 +125,26 @@ const Card2 = ({ isActive = false }) => {
   }, [fadeOut, resetInvite, isActive]);
 
   return (
-<div className="vs-card h-[430px] w-[280px] sm:w-[430px] bg-white rounded-xl flex justify-center relative overflow-hidden">
-  <div className="absolute w-full h-full p-4">
-    <AnimatePresence>
-      {showMap && (
-        <motion.img
-          src={MapImage}
-          alt="map"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          transition={{ duration: 0.5 }}
-          className="w-full h-full object-cover" 
-        />
-      )}
-    </AnimatePresence>
-
-</div>
+    <div className="vs-card h-[430px] w-[280px] sm:w-[430px] bg-white rounded-xl flex justify-center relative overflow-hidden">
+      <div className="absolute w-full h-full p-4">
+        <AnimatePresence>
+          {showMap && (
+            <motion.img
+              src={MapImage}
+              alt="map"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.5 }}
+              className="w-full h-full object-cover"
+            />
+          )}
+        </AnimatePresence>
+      </div>
       <div
         className="w-[100%] flex items-center justify-between px-6 relative"
         ref={containerRef}
       >
-
-
-
-
         <motion.img
           src={Challenger1}
           alt="Player 1"
@@ -186,8 +181,7 @@ const Card2 = ({ isActive = false }) => {
                 transition={{ duration: 0.3 }}
                 className="flex items-center justify-center border-2 border-dotted border-[#7E56DA] rounded-full w-12 h-12 text-xl font-bold text-[#7E56DA]"
               >
-                  <HiPlusSmall className="text-[#7E56dA] text-md" />
-
+                <HiPlusSmall className="text-[#7E56dA] text-md" />
               </motion.div>
             ) : (
               <motion.div
@@ -200,8 +194,7 @@ const Card2 = ({ isActive = false }) => {
                 className="p-1 border border-[#7E56DA]/50 rounded-full"
               >
                 <div className="flex items-center justify-center bg-[#7E56DA] border-2 border-dotted border-[#7E56DA] rounded-full w-12 h-12 text-xl font-bold text-white">
-                                   <HiPlusSmall className="text-white  text-md" />
-
+                  <HiPlusSmall className="text-white  text-md" />
                 </div>
               </motion.div>
             )}
@@ -488,8 +481,7 @@ const Card3 = ({ isActive = false }) => {
                     transition={{ duration: 0.6 }}
                     className="flex items-center justify-center border-2 border-dotted border-[#7E56DA] rounded-full w-10 h-10 text-xl font-bold text-[#7E56DA]"
                   >
-                                      <HiPlusSmall className="text-[#7E56dA] text-md" />
-
+                    <HiPlusSmall className="text-[#7E56dA] text-md" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -501,8 +493,7 @@ const Card3 = ({ isActive = false }) => {
                     transition={{ duration: 0.6 }}
                     className="flex items-center justify-center bg-[#7E56DA] border-2 border-dotted border-[#7E56DA] rounded-full w-12 h-12 text-xl font-bold text-white"
                   >
-                                      <HiPlusSmall className="text-white text-md" />
-
+                    <HiPlusSmall className="text-white text-md" />
                   </motion.div>
                 ))}
             </AnimatePresence>
@@ -629,8 +620,7 @@ const Card3 = ({ isActive = false }) => {
                   transition={{ duration: 0.8 }}
                   className="flex items-center justify-center border-2 border-dotted border-[#7E56DA] rounded-full w-12 h-12 text-xl font-bold text-[#7E56DA]"
                 >
-                                    <HiPlusSmall className="text-[#7E56dA] text-md" />
-
+                  <HiPlusSmall className="text-[#7E56dA] text-md" />
                 </motion.div>
               ) : (
                 <motion.div
@@ -640,8 +630,7 @@ const Card3 = ({ isActive = false }) => {
                   transition={{ duration: 0.8 }}
                   className="flex items-center justify-center bg-[#7E56DA] border-2 border-dotted border-[#7E56DA] rounded-full w-12 h-12 text-xl font-bold text-white"
                 >
-                                    <HiPlusSmall className="text-white text-md" />
-
+                  <HiPlusSmall className="text-white text-md" />
                 </motion.div>
               )}
             </div>
@@ -768,10 +757,10 @@ const TypingText = ({ isNotActive }) => {
   }, [index, isNotActive]);
 
   return (
-    <div className="text-[#7E56DA] text-[20px] font-medium leading-relaxed">
-      {displayedWords.join(" ")}
-      {!isNotActive && <span className="animate-blink inline-block">|</span>}
-    </div>
+    <div className="text-[#7E56DA] text-[20px] font-medium leading-relaxed min-h-[65px]">
+    {displayedWords.join(" ")}
+    {!isNotActive && <span className="animate-blink inline-block">|</span>}
+  </div>
   );
 };
 
@@ -896,7 +885,7 @@ const Card4 = () => {
   );
 };
 
-const sampleCards = (activeIndex) => [
+const sampleCardsDuo = (activeIndex) => [
   <div className="p-8 py-14 w-[280px] sm:w-[430px] h-[430px]">
     <div className="flex flex-col justify-between h-full   ">
       <div className="flex w-max items-center justify-center rounded-[8px] p-[8px] border border-[#7E56DA]/20">
@@ -923,6 +912,45 @@ const sampleCards = (activeIndex) => [
   <Card3 isActive={activeIndex === 2} />,
   // <Card4 isActive={activeIndex === 3} />,
 ];
+const sampleCardsSingle = (activeIndex) => [
+  <div className="p-8 py-14 w-[280px] sm:w-[430px] h-[430px]">
+    <div className="flex flex-col justify-between h-full   ">
+      <div className="flex w-max items-center justify-center rounded-[8px] p-[8px] border border-[#7E56DA]/20">
+        🏃
+      </div>
+
+      <div className="text-[16px] text-[#3F3F3F]/60 ">
+        Let’s create a new challenge!
+      </div>
+      <div className="flex flex-col space-y-2">
+        <TypingText isNotActive={activeIndex !== 0} />
+
+        <div className="bg-[#8A8A8A]/25 h-[2px] rounded-full"></div>
+      </div>
+
+      <div className="font-satoshi text-white font-bold bg-[#7E56DA] text-[14px] px-2 py-2 rounded-[8px] flex gap-[11px] justify-center">
+        Create Challenge
+        <p>→</p>
+      </div>
+    </div>
+  </div>,
+
+  <Card3 isActive={activeIndex === 1} />,
+  // <Card4 isActive={activeIndex === 3} />,
+];
+function breakAfterWord(text, breakAfter) {
+  const index = text.indexOf(breakAfter);
+  if (index === -1) return text; // if word not found, return original
+
+  const breakIndex = index + breakAfter.length;
+  return (
+    <>
+      {text.slice(0, breakIndex)}
+      <br />
+      {text.slice(breakIndex).trim()}
+    </>
+  );
+}
 
 const CardCarousel = ({ cardBuilder, stepContent }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -944,35 +972,39 @@ const CardCarousel = ({ cardBuilder, stepContent }) => {
     ...cards.slice(0, currentIndex),
   ];
 
-  const { title, description, step } = stepContent[currentIndex]; // ✅ Dynamic content
+  const { title, description, step, breakAfter } = stepContent[currentIndex]; // ✅ Dynamic content
 
   return (
     <div className="carousel-container overflow-hidden w-full">
       <h1 className="pb-5 flex justify-between items-end">
         <div className="">
-        <span className="text-white/50 text-[12px] md:text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px]">
-          {step}
-        </span>
-        <br />
-        <span className="text-white   font-semibold text-[18px] md:text-[30px] sm:text-[34px] md:text-[38px] lg:text-[42px]">
-          {title}
-
-        
-        </span>
+          <span className="text-white/50 text-[12px] md:text-[24px] sm:text-[28px] md:text-[30px] lg:text-[32px]">
+            {step}
+          </span>
+          <br />
+          <span className="text-white   font-semibold text-[18px] md:text-[30px] sm:text-[34px] md:text-[38px] lg:text-[42px]">
+            {title}
+          </span>
         </div>
-      
-<div className="block md:hidden mt-4 flex gap-2 px-2">
-          <button onClick={handlePrev} className="cursor-pointer h-[34px] w-[34px]">
+
+        <div className="block md:hidden mt-4 flex gap-2 px-2 ">
+          <button
+            onClick={handlePrev}
+            className="cursor-pointer h-[34px] w-[34px]"
+          >
             <img src={LeftArrowBtn} alt="left arrow" />
           </button>
-          <button onClick={handleNext} className="cursor-pointer h-[34px] w-[34px]">
+          <button
+            onClick={handleNext}
+            className="cursor-pointer h-[34px] w-[34px]"
+          >
             <img src={RightArrowBtn} alt="right arrow" />
           </button>
         </div>
       </h1>
 
       <div className="carousel w-full ">
-        <div className="grid grid-flow-col auto-cols-max gap-4 max-h-[430px] items-stretch max-w-[200px] md:max-w-[200px]">
+        <div className="grid grid-flow-col auto-cols-max gap-8 max-h-[430px] items-stretch max-w-[200px] md:max-w-[200px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -999,7 +1031,7 @@ const CardCarousel = ({ cardBuilder, stepContent }) => {
                   x: direction === 1 ? 100 : -100,
                   scale: 1,
                 }}
-                animate={{ opacity: 0.4, x: 0, scale: 1 }}
+                animate={{ opacity: 0.2, x: 0, scale: 1 }}
                 exit={{
                   opacity: index === 0 ? 0.3 : 0.4,
                   scale: index === 0 ? 0.9 : 1,
@@ -1027,14 +1059,20 @@ const CardCarousel = ({ cardBuilder, stepContent }) => {
       {/* ✅ Step Description */}
       <div className="flex mt-8 md:mt-14 justify-between ">
         <div className="text-[13px] md:text-[28px] text-white/50 md:max-w-[60%] mt-4">
-          <span>{description}</span>
+          <span>{breakAfterWord(description, breakAfter)}</span>
         </div>
 
-        <div className="hidden md:block mt-4 flex gap-2">
-          <button onClick={handlePrev} className="cursor-pointer h-[60px] w-[60px]">
+        <div className="hidden md:block mt-4 flex gap-2 pr-12">
+          <button
+            onClick={handlePrev}
+            className="cursor-pointer h-[60px] w-[60px]"
+          >
             <img src={LeftArrowBtn} alt="left arrow" />
           </button>
-          <button onClick={handleNext} className="cursor-pointer h-[60px] w-[60px]">
+          <button
+            onClick={handleNext}
+            className="cursor-pointer h-[60px] w-[60px]"
+          >
             <img src={RightArrowBtn} alt="right arrow" />
           </button>
         </div>
@@ -1043,36 +1081,54 @@ const CardCarousel = ({ cardBuilder, stepContent }) => {
   );
 };
 
-const stepContent = [
+const stepContentDuo = [
   {
     step: "Step 1",
     title: "Create a Duo Private Challenge",
     description:
       "Create a skill based private challenge around something you’re great at!",
+    breakAfter: "around",
   },
   {
     step: "Step 2",
     title: "Invite Challenger",
     description:
-      "Invite your friends as motivators to give opinions, and a moderator to make the final call!",
+      "Invite a friend to compete with you, let’s see who’s got the edge!",
+    breakAfter: "who’s",
   },
   {
     step: "Step 3",
     title: "Invite Motivator & Moderator!",
     description:
-      "Let your friends as motivators place their opinion on whether you’ll succeed or not!",
+      "Invite your friends as motivators to give opinions, and a moderator to make the final call!",
+    breakAfter: "opinions",
   },
-  // {
-  //   title: "Step 4\nDo the Thing!",
-  //   description:
-  //     "Now both of you take on the challenge. Give it your best shot!",
-  // },
+];
+const stepContentSingle = [
+  {
+    step: "Step 1",
+    title: "Create a Solo Private Challenge",
+    description:
+      "Create a skill based private challenge around something you’re great at like running, gaming, or anything!",
+    breakAfter: "something",
+  },
+
+  {
+    step: "Step 2",
+    title: "Invite Motivator & Moderator!",
+    description:
+      "Invite your friends as motivators to give opinions, and a moderator to make the final call!",
+    breakAfter: "opinions",
+  },
 ];
 
-export default function CardCarouselPreview() {
+export default function CardCarouselPreview({ isDuo }) {
   return (
     <div className="card-carousel-container">
-      <CardCarousel cardBuilder={sampleCards} stepContent={stepContent} />
+      <CardCarousel
+        cardBuilder={isDuo ? sampleCardsDuo : sampleCardsSingle}
+        stepContent={isDuo ? stepContentDuo : stepContentSingle}
+      />
     </div>
   );
 }

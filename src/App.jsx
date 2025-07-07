@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 function App() {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-
+  const [isDuo, setIsDuo] = useState(true);
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -42,8 +42,8 @@ function App() {
         </div>
 
         <Section3 />
-        <Section4 />
-        <Section5 />
+        <Section4 isDuo={isDuo} setIsDuo={setIsDuo}/>
+        <Section5 isDuo={isDuo}/>
 
         <div id="features" className="scroll-mt-[100px]">
           <Section6 />
