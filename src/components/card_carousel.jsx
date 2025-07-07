@@ -130,7 +130,7 @@ const Card2 = ({ isActive = false }) => {
         className="w-[100%] flex items-center justify-between px-6 relative"
         ref={containerRef}
       >
-<div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 p-8 -translate-y-1/2 h-[430px] w-[280px] sm:w-[430px]">
+<div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 p-8 -translate-y-1/2 h-[470px] w-[300px] sm:w-[430px] ">
   <AnimatePresence>
     {showMap && (
       <motion.img

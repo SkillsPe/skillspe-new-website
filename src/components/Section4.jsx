@@ -16,10 +16,15 @@ import DuoImage1 from "../assets/duo-carousel-image1.svg";
 import DuoImage2 from "../assets/duo-carousel-image2.svg";
 import DuoImage3 from "../assets/duo-carousel-image3.svg";
 import SoloImage1 from "../assets/solo-carousel-image1.svg";
+import MobileDuoImage1 from "../assets/mobile_duo_1.svg";
+import MobileDuoImage2 from "../assets/mobile_duo_2.svg";
+import MobileDuoImage3 from "../assets/mobile_duo_3.svg";
+import MobileSoloImage1 from "../assets/mobile_single_1.svg";
 import ClickHereLarge from "../assets/click_here_large.svg";
 import SoloImage2 from "../assets/solo-carousel-image2.svg";
 import ClickHere from "../assets/click_here.svg";
-
+import MobileSoloImage2 from "../assets/mobile_single_2.svg";
+import MobileSoloImage3 from "../assets/mobile_single_3.svg";
 import SoloImage3 from "../assets/solo-carousel-image3.svg";
 import SoloImage4 from "../assets/solo-carousel-image4.svg";
 import SoloIcon from "../assets/solo-icon-image.svg";
@@ -84,6 +89,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const duoSlides = [DuoImage1, DuoImage2, DuoImage3];
 const soloSlides = [SoloImage1, SoloImage2, SoloImage3, SoloImage4];
+const mobileDuoSlides = [MobileDuoImage1, MobileDuoImage2, MobileDuoImage3];
+const mobileSingleSlides = [
+  MobileSoloImage1,
+  MobileSoloImage2,
+  MobileSoloImage3,
+];
 const AutoCarousel1 = ({ slides = [], delay = 4000 }) => {
   const [index, setIndex] = useState(0);
 
@@ -134,7 +145,7 @@ const AutoCarousel1 = ({ slides = [], delay = 4000 }) => {
 
   return (
     <div className="w-full overflow-hidden  bg-transparent">
-      <div className="relative max-w-screen-lg mx-auto w-full h-[140px] sm:h-[280px] md:h-[320px] lg:h-[380px] flex items-center justify-center">
+      <div className="relative max-w-screen-lg mx-auto w-full h-[356px] sm:h-[280px] md:h-[320px] lg:h-[380px] flex items-center justify-center">
         {slides.map((slide, i) => (
           <motion.div
             key={i}
@@ -198,17 +209,16 @@ export default function Section4() {
 
               {/* Large Click Image: Only visible on lg and up */}
               <img
-  src={ClickHereLarge}
-  alt="Click here large"
-  className="hidden lg:block absolute -top-20 left-[160%] -translate-x-1/2 h-auto w-[200px] max-w-none"
-/>
+                src={ClickHereLarge}
+                alt="Click here large"
+                className="hidden lg:block absolute -top-20 left-[160%] -translate-x-1/2 h-auto w-[200px] max-w-none"
+              />
 
-<img
-  src={ClickHereArrow}
-  alt="Click here arrow"
-  className="block lg:hidden absolute top-1 left-[90%] ml-2 h-auto w-[120px] max-w-none"
-/>
-
+              <img
+                src={ClickHereArrow}
+                alt="Click here arrow"
+                className="block lg:hidden absolute top-1 left-[90%] ml-2 h-auto w-[120px] max-w-none"
+              />
             </div>
           </span>
           <div className="w-[120px] lg:hidden"></div>
@@ -227,7 +237,16 @@ export default function Section4() {
 
       <div className="">
         <div className="carousel">
-          <AutoCarousel1 slides={isDuo ? duoSlides : soloSlides} />
+          <div className="hidden w-full md:block">
+            <AutoCarousel1 slides={isDuo ? duoSlides : soloSlides} />
+          </div>
+
+          {/* Mobile Carousel */}
+          <div className="block w-full md:hidden">
+            <AutoCarousel1
+              slides={isDuo ? mobileDuoSlides : mobileSingleSlides}
+            />
+          </div>
         </div>
       </div>
       <img

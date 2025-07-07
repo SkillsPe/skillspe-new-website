@@ -24,6 +24,21 @@ body {
   z-index: 1000;
   overflow-x: hidden;
 }
+.headerContainer {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.headerContainer.hide {
+  transform: translateY(-150%);
+}
+
+.headerContainer.show {
+  transform: translateY(0);
+}
 
 /* Logo Area */
 .logo-container {
