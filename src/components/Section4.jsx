@@ -17,6 +17,8 @@ import DuoImage2 from "../assets/duo-carousel-image2.svg";
 import DuoImage3 from "../assets/duo-carousel-image3.svg";
 import SoloImage1 from "../assets/solo-carousel-image1.svg";
 import SoloImage2 from "../assets/solo-carousel-image2.svg";
+import ClickHere from "../assets/click_here.svg";
+
 import SoloImage3 from "../assets/solo-carousel-image3.svg";
 import SoloImage4 from "../assets/solo-carousel-image4.svg";
 import SoloIcon from "../assets/solo-icon-image.svg";
@@ -216,6 +218,9 @@ export default function Section4() {
         <div className="highlight">
           Prove your Skills either way, Play
           <span className={isDuo ? "faded" : "highlighted"}>SOLO</span>
+          <div>
+            <img />
+          </div>
           <span className="mode-switch-image">
             <FormGroup>
               <FormControlLabel
@@ -232,14 +237,11 @@ export default function Section4() {
               />
             </FormGroup>
           </span>
-          <span className={isDuo ? "highlighted" : "faded"}>DUO</span>
-          {/* <img
-            className='click-here-arrow'
-            src={ClickHereArrow}
-            alt='Click Here Arrow'
-          /> */}
+          <div className={isDuo ? "highlighted" : "faded"}>Duo</div>
+         
+         
         </div>
-        <p className="subtext">
+        <p className="subtext md:w-[70%] lg:w-[40%] pt-2">
           <span>
             Create personal skill-based challenges, invite others, and get
             judged by your trusted circle. Compete solo or go head-to-head in

@@ -10,7 +10,7 @@ import RightArrowBtn from "../assets/right-arrow-btn.svg";
 import Challenger1 from "../assets/challenger1.svg";
 import InviteChallenger from "../assets/invite-challenger-image.svg";
 import InviteProfileIcon from "../assets/invite_profile.svg";
-
+import MapImage from '../assets/map.svg';
 import VsImage from "../assets/vs-image.svg";
 import ProfileIcon1 from "../assets/animate_profile_icon1.svg";
 import Check from "../assets/check.svg";
@@ -32,6 +32,7 @@ const Card2 = ({ isActive = false }) => {
   const [filled, setFilled] = useState(false);
   const [ iconVisible,setIconsVisible] = useState(false);
   const [showIcons, setShowIcons] = useState(false);
+  const [showMap,setShowMap] = useState(false);
   const [icon2Moved, setIcon2Moved] = useState(false);
   const [yOffset, setYOffset] = useState(0);
   const [icon2AtCenter, setIcon2AtCenter] = useState(false);
@@ -50,6 +51,7 @@ const Card2 = ({ isActive = false }) => {
   const activateTheIcons = () => {
     setIconsVisible(true);
     setTimeout(() => setShowIcons(true), 700);
+    setTimeout(() => setShowMap(true),700);
     setTimeout(() => setIcon2Moved(true), 3000);
   };
 
@@ -70,6 +72,7 @@ const Card2 = ({ isActive = false }) => {
     setIconsVisible(false);
     setShowIcons(false);
     setIcon2Moved(false);
+    setShowMap(false);
     setIcon2AtCenter(false);
     setResetInvite(false);
     setXOffset(0);
@@ -126,6 +129,24 @@ const Card2 = ({ isActive = false }) => {
         className="w-[100%] flex items-center justify-between px-6 relative"
         ref={containerRef}
       >
+<div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 p-8 -translate-y-1/2 h-[430px] w-[280px] sm:w-[430px]">
+  <AnimatePresence>
+    {showMap && (
+      <motion.img
+        src={MapImage}
+        alt="map"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.8 }}
+        transition={{ duration: 0.5 }}
+        className="w-full h-full object-contain"
+      />
+    )}
+  </AnimatePresence>
+</div>
+
+
+
         <motion.img
           src={Challenger1}
           alt="Player 1"
