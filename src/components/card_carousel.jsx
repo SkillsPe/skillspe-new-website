@@ -520,7 +520,8 @@ const Card3 = ({ isActive = false }) => {
                       height={40}
                       width={40}
                       initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
+                      className=""
+                      animate={{ opacity: 1,x:-15 }}
                       exit={{ opacity: 0, x: 20 }}
                       transition={{ duration: 0.3 }}
                     />

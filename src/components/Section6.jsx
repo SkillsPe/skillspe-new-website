@@ -206,9 +206,10 @@ function Section6CSS() {
               <h2 className="feature-heading feature-heading2">
                 Your Skill Portfolio
               </h2>
-              <p className="feature-description feature-description2">
+              <p className="feature-description feature-description2 ">
                 Track your progress, showcase completed challenges, and build a
                 powerful portfolio that reflects your real-world skills.
+                
               </p>
               <img
                 className="feature-growthChart-icon"
@@ -223,7 +224,7 @@ function Section6CSS() {
         <div className="feature-image feature-image-item3">
           <img src={background4} alt="Sharpen Your Skills" />
           <div>
-            <div className="feature-image-text">
+            <div className="feature-image-text pr-8">
               <h2 className="feature-heading feature-heading3">
                 Sharpen Your Skills!
               </h2>
